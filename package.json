@@ -17,6 +17,14 @@
     "typescript": "^5.5.4"
   },
   "prettier": {
-    "plugins": ["prettier-plugin-astro"]
+    "plugins": [
+      "prettier-plugin-astro",
+      "prettier-plugin-tailwindcss"
+    ],
+    "tailwindConfig": "./tailwind.config.mjs"
+  },
+  "devDependencies": {
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.6"
   }
 }
