@@ -2,36 +2,41 @@
 import Image from "astro/components/Image.astro";
 ---
 
-<main id="main-window" class="h-[100dvh] w-full bg-white ">
-  <div id="spacer" class="h-[200dvh] w-full bg-primary"></div>
+<main id="main-window" class="relative h-[100dvh] w-full bg-white">
+  <div id="spacer" class="h-[200dvh] w-full bg-primary">
+    <img
+      id="logo"
+      src="SRHLogo_Glitch.gif"
+      alt="SRH Logo website logo"
+      class="sticky left-1/2 top-1/2 w-1/3 -translate-x-1/2 -translate-y-1/2 transition-all duration-700 sm:w-3/12 sm:landscape:w-1/12"
+    />
 
-  <img
-    id="logo"
-    src="SRHLogo_Glitch.gif"
-    alt="SRH Logo website logo"
-    class="fixed left-1/2 top-1/2 w-1/3 -translate-x-1/2 -translate-y-1/2 transition-all duration-700 sm:w-3/12 sm:landscape:w-1/12"
-  />
-
-  <div
-    id="mainTitle"
-    class="text-accent fixed bottom-0 text-center transition-all duration-700"
-  >
     <div
-      id="mainText"
-      class="py-0 text-[6.5rem] font-extrabold leading-none sm:text-[11.5rem] md:text-[13.5rem] lg:text-[18.5rem] xl:text-[32.5rem]"
+      id="mainTitle"
+      class="sticky translate-y-1/2 text-center text-accent transition-all duration-700"
     >
-      ARISE
+      <h1
+        id="mainText"
+        class="py-0 text-[6.5rem] font-extrabold leading-none sm:text-[11.5rem] md:text-[13.5rem] lg:text-[18.5rem] xl:text-[32.5rem]"
+      >
+        AR<span>I</span>SE
+      </h1>
+      <div id="subText" class="text-[1.8rem] font-bold leading-none">
+        YE SLEEPING GIANTS
+      </div>
     </div>
-    <div id="subText" class="text-[1.8rem] leading-none font-bold">YE SLEEPING GIANTS</div>
+
   </div>
 </main>
 
 <script>
   const break1 = 10;
+  const break2 = 20;
 
   const logo = document.getElementById("logo") as HTMLImageElement;
   const main = document.getElementById("main-section") as HTMLElement;
   const mainTitle = document.getElementById("mainTitle") as HTMLElement;
+  const iID = document.getElementById("iID") as HTMLElement;
 
   function insertInMainFunction(text: string) {
     const newh1 = document.createElement("h1"); // Create a new h1 element
@@ -57,7 +62,8 @@ import Image from "astro/components/Image.astro";
       logo.style.transform = "translate(0,0)";
 
       mainTitle.style.bottom = "0%";
-    } else {
+    } else if (scrolledPercentage > break2) {
+      iID.style.height = "20vh";
     }
   });
 </script>
