@@ -17,26 +17,27 @@ import Image from "astro/components/Image.astro";
     >
       <h1
         id="mainText"
-        class="py-0 text-[6.5rem] font-extrabold leading-none sm:text-[11.5rem] md:text-[13.5rem] lg:text-[18.5rem] xl:text-[32.5rem]"
+        class="py-0 text-[6.5rem] font-extrabold leading-none transition-all duration-700 sm:text-[11.5rem] md:text-[13.5rem] lg:text-[18.5rem] xl:text-[32.5rem]"
       >
-        ARSE
+        AR<span class="inline-block origin-bottom  transition-all duration-700" id="lineI">I</span>SE
       </h1>
       <div id="subText" class="text-[1.8rem] font-bold leading-none">
         YE SLEEPING GIANTS
       </div>
-<span id="iID" class="absloute  h-[90dvh]">I</span>
     </div>
+
   </div>
 </main>
 
 <script>
   const break1 = 10;
   const break2 = 20;
+  const break3 = 30;
 
   const logo = document.getElementById("logo") as HTMLImageElement;
   const main = document.getElementById("main-section") as HTMLElement;
   const mainTitle = document.getElementById("mainTitle") as HTMLElement;
-  const iID = document.getElementById("iID") as HTMLElement;
+  const lineI = document.getElementById("lineI") as HTMLElement;
 
   function insertInMainFunction(text: string) {
     const newh1 = document.createElement("h1"); // Create a new h1 element
@@ -56,17 +57,24 @@ import Image from "astro/components/Image.astro";
       logo.style.left = "50%";
       logo.style.top = "50%";
       logo.style.transform = "translate(-50%,-50%)";
+
       mainTitle.style.top = "100%";
-    } else if (scrolledPercentage > break1) {
+      lineI.style.transform = "scaleY(1)";
+
+    } else if (scrolledPercentage > break1 && scrolledPercentage <= break2) {
       logo.style.left = "4%";
       logo.style.top = "2%";
       logo.style.transform = "translate(0,0)";
 
       mainTitle.style.top = "50%";
-    } else if (scrolledPercentage > break2) {
 
-      iID.style.height = "50vh";
+      lineI.style.transform = "scaleY(1)";
+
+    } else if (scrolledPercentage > break2 && scrolledPercentage >= break3) {
+
+      lineI.style.transform = "scaleY(3)";
+      
+
     }
-
   });
 </script>
