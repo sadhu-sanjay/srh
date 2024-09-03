@@ -3,7 +3,7 @@ import Image from "astro/components/Image.astro";
 ---
 
 <main id="main-window" class="relative h-[100dvh] w-full bg-white">
-  <div id="spacer" class="h-[200dvh] w-full bg-primary">
+  <div id="spacer" class="h-[300dvh] w-full bg-primary">
     <img
       id="logo"
       src="SRHLogo_Glitch.gif"
@@ -13,19 +13,19 @@ import Image from "astro/components/Image.astro";
 
     <div
       id="mainTitle"
-      class="sticky translate-y-1/2 text-center text-accent transition-all duration-700"
+      class="sticky top-full text-center text-accent transition-all duration-700"
     >
       <h1
         id="mainText"
         class="py-0 text-[6.5rem] font-extrabold leading-none sm:text-[11.5rem] md:text-[13.5rem] lg:text-[18.5rem] xl:text-[32.5rem]"
       >
-        AR<span>I</span>SE
+        ARSE
       </h1>
       <div id="subText" class="text-[1.8rem] font-bold leading-none">
         YE SLEEPING GIANTS
       </div>
+<span id="iID" class="absloute  h-[90dvh]">I</span>
     </div>
-
   </div>
 </main>
 
@@ -50,20 +50,23 @@ import Image from "astro/components/Image.astro";
     const scrobbaleHeight = scrollHeight - window.outerHeight;
 
     const scrolledPercentage = (scrollY / scrobbaleHeight) * 100;
+    console.log("here & There", scrolledPercentage);
 
     if (scrolledPercentage <= break1) {
       logo.style.left = "50%";
       logo.style.top = "50%";
       logo.style.transform = "translate(-50%,-50%)";
-      mainTitle.style.bottom = "-50%";
+      mainTitle.style.top = "100%";
     } else if (scrolledPercentage > break1) {
       logo.style.left = "4%";
       logo.style.top = "2%";
       logo.style.transform = "translate(0,0)";
 
-      mainTitle.style.bottom = "0%";
+      mainTitle.style.top = "50%";
     } else if (scrolledPercentage > break2) {
-      iID.style.height = "20vh";
+
+      iID.style.height = "50vh";
     }
+
   });
 </script>
