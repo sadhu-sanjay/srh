@@ -17,15 +17,15 @@ import Image from "astro/components/Image.astro";
     >
       <div
         id="mainText"
-        class="py-0 text-[6.5rem] font-extrabold leading-none transition-all duration-700 sm:text-[11.5rem] md:text-[13.5rem] lg:text-[18.5rem] xl:text-[32.5rem]"
+        class="py-0 text-[6rem] font-extrabold leading-none transition-all duration-700 sm:text-[11.5rem] md:text-[13.5rem] lg:text-[18.5rem] xl:text-[32.5rem]"
       >
-        AR<span class="relative border inline-block "
-          >I<span id="iId" class="absolute inline-block left-0 top-0  transition-all duration-700 origin-bottom ">I</span></span
+        AR<span class="relative inline-block "
+          >I<span id="iId" class="absolute inline-block left-0 top-0 transition-all duration-700 origin-bottom ">I</span></span
         >SE
 
-        <!-- <div id="subText" class="text-[1.8rem] font-bold leading-none">
+        <div id="subText" class="text-[1.8rem] font-bold leading-none">
         YE SLEEPING GIANTS
-      </div> -->
+      </div>
       </div>
     </div>
   </div>
@@ -72,7 +72,8 @@ import Image from "astro/components/Image.astro";
         iId.style.transform = "scaleY(1)"
       } else if (scrolledPercentage > break2 && scrolledPercentage >= break3) {
 
-        mainTitle.style.top = "80%";
+        mainTitle.style.top = "75%";
+
         iId.style.transform = "scaleY(5)"
       }
     });
