@@ -47,13 +47,11 @@ import Image from "astro/components/Image.astro";
     const iId = document.getElementById("iId") as HTMLElement;
 
     const isMobile = window.matchMedia("(max-width: 639px)").matches;
-    const isTablet = window.matchMedia(
-      "(min-width: 640px) and (max-width: 1023px)"
-    ).matches;
-    const isDesktop = window.matchMedia(
-      "(min-width: 1024px) and (max-width: 1279px)"
-    ).matches;
-    const isLargeScreen = window.matchMedia("(min-width: 1280px)").matches;
+    const isTablet = window.matchMedia("(min-width: 640px) and (max-width: 1023px)").matches;
+    const isLaptop = window.matchMedia("(min-width: 1024px) and (max-width: 1279px)").matches;
+    const isDesktop = window.matchMedia("(min-width: 1280px) and (max-width: 1535px)").matches;
+    const isLargeDesktop = window.matchMedia("(min-width: 1536px)").matches;
+
 
     function insertInMainFunction(text: string) {
       const newh1 = document.createElement("h1"); // Create a new h1 element
@@ -92,16 +90,29 @@ import Image from "astro/components/Image.astro";
           mainTitle.style.top = "78%";
         } else if (isTablet) {
           mainTitle.style.top = "71%";
-        } else if (isDesktop) {
+        } else if (isLaptop) {
           mainTitle.style.top = "49%";
-        } else {
+        } else if(isDesktop) {
+          mainTitle.style.top = "40%"
+        } else if (isLargeDesktop) {
           mainTitle.style.top = "32%";
         }
 
         iId.style.transform = "scaleY(1)";
+
       } else if (scrolledPercentage > break2 && scrolledPercentage >= break3) {
 
-        iId.style.transform = "scaleY(6)"
+        if (isMobile) {
+          iId.style.transform = "scaleY(6)"
+        }else if (isTablet) {
+          iId.style.transform = "scaleY(5)"
+        }else if (isLaptop) {
+          iId.style.transform = "scaleY(3)"
+        }else if (isDesktop) {
+          iId.style.transform = "scaleY(2.1)"
+        } else if (isLargeDesktop) {
+          iId.style.transform = "scaleY(1.8)"
+        }
 
       }
     });
