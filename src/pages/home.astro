@@ -13,19 +13,25 @@ import Image from "astro/components/Image.astro";
 
     <div
       id="mainTitle"
-      class="sticky top-1/2 text-center text-accent transition-all duration-700"
+      class="sticky top-full w-full text-center text-accent transition-all duration-700"
     >
       <div
         id="mainText"
-        class="py-0 text-[6rem] font-extrabold leading-none transition-all duration-700 sm:text-[11.5rem] md:text-[13.5rem] lg:text-[18.5rem] xl:text-[32.5rem]"
+        class=" w-full leading-none overflow-hidden whitespace-nowrap text-center text-[33vw] font-black "
       >
-        AR<span class="relative inline-block "
-          >I<span id="iId" class="absolute inline-block left-0 top-0 transition-all duration-700 origin-bottom ">I</span></span
+        AR<span class="relative inline-block"
+          >I<span
+            id="iId"
+            class="w-full absolute left-0 top-0 inline-block origin-bottom transition-all duration-700"
+            >I</span
+          ></span
         >SE
-
-        <div id="subText" class="text-[1.8rem] font-bold leading-none">
-        YE SLEEPING GIANTS
       </div>
+      <div
+        id="subText"
+        class=" text-[9.5vw] w-full leading-none whitespace-nowrap text-center font-black -translate-y-1/2 "
+      >
+        YE SLEEPING GIANTS
       </div>
     </div>
   </div>
@@ -40,6 +46,15 @@ import Image from "astro/components/Image.astro";
     const mainTitle = document.getElementById("mainTitle") as HTMLElement;
     const iId = document.getElementById("iId") as HTMLElement;
 
+    const isMobile = window.matchMedia("(max-width: 639px)").matches;
+    const isTablet = window.matchMedia(
+      "(min-width: 640px) and (max-width: 1023px)"
+    ).matches;
+    const isDesktop = window.matchMedia(
+      "(min-width: 1024px) and (max-width: 1279px)"
+    ).matches;
+    const isLargeScreen = window.matchMedia("(min-width: 1280px)").matches;
+
     function insertInMainFunction(text: string) {
       const newh1 = document.createElement("h1"); // Create a new h1 element
       newh1.textContent = text; // Set the text content
@@ -47,12 +62,20 @@ import Image from "astro/components/Image.astro";
     }
 
     window.addEventListener("scroll", (ev: Event) => {
+
+
       const scrollY = window.scrollY;
       const scrollHeight = document.documentElement.scrollHeight;
       const scrobbaleHeight = scrollHeight - window.outerHeight;
 
       const scrolledPercentage = (scrollY / scrobbaleHeight) * 100;
       console.log("here & There", scrolledPercentage);
+
+      function mainTitleAnimation() {
+        if (isMobile) {
+        } else {
+        }
+      }
 
       if (scrolledPercentage <= break1) {
         logo.style.left = "50%";
@@ -61,20 +84,26 @@ import Image from "astro/components/Image.astro";
 
         mainTitle.style.top = "100%";
 
-        iId.style.transform = "scaleY(1)"
+        iId.style.transform = "scaleY(1)";
       } else if (scrolledPercentage > break1 && scrolledPercentage <= break2) {
         logo.style.left = "4%";
         logo.style.top = "2%";
         logo.style.transform = "translate(0,0)";
 
-        mainTitle.style.top = "50%";
+        if (isMobile) {
+          mainTitle.style.top = "26%";
+        } else if (isTablet) {
+          mainTitle.style.top = "27%";
+        } else if (isDesktop) {
+          mainTitle.style.top = "50%";
+        } else {
+          mainTitle.style.top = "32%";
+        }
 
-        iId.style.transform = "scaleY(1)"
+        iId.style.transform = "scaleY(1)";
       } else if (scrolledPercentage > break2 && scrolledPercentage >= break3) {
-
-        mainTitle.style.top = "75%";
-
-        iId.style.transform = "scaleY(5)"
+        // mainTitle.style.top = "75%";
+        // iId.style.transform = "scaleY(5)";
       }
     });
   </script>
