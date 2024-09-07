@@ -17,10 +17,18 @@ import Image from "astro/components/Image.astro";
     >
       <div
         id="mainText"
-        class="w-full whitespace-nowrap text-center text-[33vw] font-black leading-none"
+        class="w-full whitespace-nowrap text-center text-[31vw]  font-black leading-none"
       >
-        A<span class="relative" id="letterR">R</span><span
-          class="relative inline-block"
+        A<span class="relative" id="letterR"
+          >R
+          <p
+            id="para1"
+            class="absolute right-0 h-24 w-40 whitespace-normal text-center text-lg font-bold leading-tight text-secondary-accent"
+          >
+            "We harness empirical marketing(1) to awaken brands to their true
+            potential";
+          </p>
+        </span><span class="relative inline-block"
           >I<span
             id="iExpendable"
             class="absolute left-0 top-0 inline-block w-full origin-bottom transition-all duration-700"
@@ -37,23 +45,6 @@ import Image from "astro/components/Image.astro";
       </div>
     </div>
   </div>
-
-  <style>
-    #letterR::after {
-      content: "We harness empirical marketing(1) to awaken brands to their true potential";
-      color: rgb(var(--secondary-accent));
-      width: 150px;
-      height: 100px;
-      white-space: wrap;
-      font-size: 16px;
-      font-weight: bold;
-      position: absolute;
-      top: -60%;
-      right: 0%;
-      line-height: 1rem;
-      text-align: right;
-    }
-  </style>
 
   <script>
     const break1 = 10;
@@ -138,11 +129,9 @@ import Image from "astro/components/Image.astro";
         } else if (isLargeDesktop) {
           iExpendable.style.transform = "scaleY(1.8)";
         }
-
       } else if (scrolledPercentage > break3 && scrolledPercentage <= break4) {
-
-        console.log("letter", letterR.style)
-        letterR.style.setProperty('--after-color', "green");
+        console.log("letter", letterR.style);
+        // para1.style.top = "-66%";
       }
     });
   </script>
