@@ -19,10 +19,10 @@ import Image from "astro/components/Image.astro";
         id="mainText"
         class="w-full whitespace-nowrap text-center text-[33vw] font-black leading-none"
       >
-        <span>A</span><span id="letterR"
+        <span>A</span><span id="letterR" class="relative"
           >R<p
             id="para1"
-            class="absolute right-0 top-[200%] h-24 w-40 -translate-x-full -translate-y-full text-wrap text-right text-sm font-bold leading-tight text-secondary-accent transition-all duration-700"
+            class="absolute right-0 top-[200%] h-28 w-32 -translate-y-full whitespace-pre-wrap text-wrap bg-white text-right text-xs font-bold leading-tight text-secondary-accent transition-all duration-700"
           >
             "We harness empirical marketing(1) to awaken brands to their true
             potential"
@@ -126,9 +126,8 @@ import Image from "astro/components/Image.astro";
         ) {
           if (isMobile) {
             iExpendable.style.transform = "scaleY(6)";
-            para1.style.top = "200%"
+            para1.style.top = "200%";
             mainTitle.style.top = "78%";
-
           } else if (isTablet) {
             iExpendable.style.transform = "scaleY(5)";
           } else if (isLaptop) {
@@ -138,14 +137,11 @@ import Image from "astro/components/Image.astro";
           } else if (isLargeDesktop) {
             iExpendable.style.transform = "scaleY(1.8)";
           }
-
-
         } else if (
           scrolledPercentage > break3 &&
           scrolledPercentage <= break4
         ) {
-
-          para1.style.top = "0%";
+          para1.style.top = "10%";
 
           if (isMobile) {
             mainTitle.style.top = "81%";
