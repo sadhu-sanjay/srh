@@ -39,10 +39,7 @@ import Image from "astro/components/Image.astro";
         class="w-full whitespace-nowrap text-center text-[33vw] font-black leading-none"
       >
         <span>A</span><span id="letterR" class="relative"
-          >R<p
-            id="para1"
-            class="para"
-          >
+          >R<p id="para1" class="para">
             "We harness empirical marketing(1) to awaken brands to their true
             potential"
           </p></span
@@ -52,10 +49,7 @@ import Image from "astro/components/Image.astro";
             class="absolute left-0 top-0 origin-bottom transition-all duration-700"
             >I</span
           ><span class="relative"
-            >S<p
-              id="para2"
-              class="para text-left align-middle "
-            >
+            >S<p id="para2" class="para text-left align-middle">
               We use strategy, creative and media to make brands famous in their
               categories.
             </p></span
@@ -171,27 +165,26 @@ import Image from "astro/components/Image.astro";
           scrolledPercentage > break3 &&
           scrolledPercentage <= break4
         ) {
-
-            para1.style.top = "10%";
-            para2.style.top = "200%";
+          para1.style.top = "10%";
+          para2.style.top = "200%";
 
           if (isMobile) {
             mainTitle.style.top = "81%";
           } else if (isTablet) {
-
             mainTitle.style.top = "76%";
+          }else if (isLaptop) {
+
+            mainTitle.style.top = "56%";
           }
         } else if (
           scrolledPercentage > break4 &&
           scrolledPercentage <= break5
         ) {
-          
-          para2.style.top = "0%";
-
-          if (isMobile) {
-            mainTitle.style.top = "86%";
-          }else if (isTablet) {
-
+            para2.style.top = "0%";
+          if (isMobile || isTablet) {
+            mainTitle.style.top = "70%";
+          } else if (isLaptop) {
+            mainTitle.style.top = "60%";
           }
         }
       });
