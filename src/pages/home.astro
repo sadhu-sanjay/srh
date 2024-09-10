@@ -99,7 +99,7 @@ import Image from "astro/components/Image.astro";
           }
         }
 
-        if (scrolledPercentage <= break1) { // SCroll 1
+        if (scrolledPercentage <= break1) { // STEP 0
           logo.style.left = "50%";
           logo.style.top = "50%";
           logo.style.transform = "translate(-50%,-50%)";
@@ -110,7 +110,7 @@ import Image from "astro/components/Image.astro";
 
           para1.style.top = "200%";
           para2.style.top = "200%";
-        } else if ( // SCROLL 2
+        } else if ( // STEP 1
           scrolledPercentage > break1 &&
           scrolledPercentage <= break2
         ) {
@@ -131,7 +131,7 @@ import Image from "astro/components/Image.astro";
           }
 
           iExpendable.style.transform = "scaleY(1)";
-        } else if ( // SCROLL 3
+        } else if ( // STEP 2
           scrolledPercentage > break2 &&
           scrolledPercentage <= break3
         ) {
@@ -148,7 +148,7 @@ import Image from "astro/components/Image.astro";
           } else if (isLargeDesktop) {
             iExpendable.style.transform = "scaleY(1.8)";
           }
-        } else if ( // SCROLL 4
+        } else if ( // STEP 3
           scrolledPercentage > break3 &&
           scrolledPercentage <= break4
         ) {
@@ -156,6 +156,7 @@ import Image from "astro/components/Image.astro";
           if (isMobile) {
             mainTitle.style.top = "81%";
             para1.style.top = "10%";
+            para2.style.top = "200%"
           } else if (isTablet) {
             mainTitle.style.top = "76%";
             para1.style.top = "-10%";
@@ -165,18 +166,18 @@ import Image from "astro/components/Image.astro";
           } else if (isDesktop) {
 
           }
-        } else if (
+        } else if ( // STEP 4
           scrolledPercentage > break4 &&
           scrolledPercentage <= break5
         ) {
 
           if (isMobile) {
-            mainTitle.style.top = "60%";
+            mainTitle.style.top = "85%";
+            para2.style.top = "-10%"
           } else if (isTablet) {
             mainTitle.style.top = "60%";
           } else if (isLaptop) {
             mainTitle.style.top = "62%";
-            para2.style.top = "-10%"
           }
         }
       });
