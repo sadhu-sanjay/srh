@@ -2,25 +2,6 @@
 import Image from "astro/components/Image.astro";
 ---
 
-<style>
-  .para {
-    position: absolute;
-    top: 200%;
-    right: 4px;
-    height: 7rem;
-    width: 8rem;
-    transform: translateY(-100%);
-    white-space: pre-wrap;
-    text-wrap: wrap;
-    text-align: right;
-    font-size: 0.75rem;
-    line-height: 1.25rem;
-    font-weight: 700;
-    color: rgba(var(--secondary-accent), 1);
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-</style>
-
 <main id="main-window" class="relative h-[100dvh] w-full bg-white">
   <div id="spacer" class="h-[300dvh] w-full bg-primary">
     <img
@@ -39,9 +20,12 @@ import Image from "astro/components/Image.astro";
         class="w-full whitespace-nowrap text-center text-[33vw] font-black leading-none"
       >
         <span>A</span><span id="letterR" class="relative"
-          >R<p id="para1" class="para">
-            "We harness empirical marketing(1) to awaken brands to their true
-            potential"
+          >R<p
+            id="para1"
+            class="absolute right-0 top-[200%] h-28 w-32 -translate-y-full whitespace-pre-wrap text-wrap text-right text-xs font-bold leading-tight text-secondary-accent transition-all duration-700"
+          >
+            We harness empirical marketing(1) to awaken brands to their true
+            potential
           </p></span
         ><span class="relative"
           >I<span
@@ -49,7 +33,10 @@ import Image from "astro/components/Image.astro";
             class="absolute left-0 top-0 origin-bottom transition-all duration-700"
             >I</span
           ><span class="relative"
-            >S<p id="para2" class="para text-left align-middle">
+            >S<p
+              id="para2"
+              class="absolute left-0 top-[200%] h-28 w-32 -translate-y-full text-wrap text-left text-xs font-bold leading-tight text-secondary-accent transition-all duration-700"
+            >
               We use strategy, creative and media to make brands famous in their
               categories.
             </p></span
@@ -68,9 +55,9 @@ import Image from "astro/components/Image.astro";
     <script>
       const break1 = 10;
       const break2 = 20;
-      const break3 = 30;
-      const break4 = 40;
-      const break5 = 50;
+      const break3 = 32;
+      const break4 = 44;
+      const break5 = 55;
 
       const logo = document.getElementById("logo") as HTMLImageElement;
       const main = document.getElementById("main-section") as HTMLElement;
@@ -122,7 +109,6 @@ import Image from "astro/components/Image.astro";
           iExpendable.style.transform = "scaleY(1)";
 
           para1.style.top = "200%";
-          para2.style.top = "200%";
         } else if (
           scrolledPercentage > break1 &&
           scrolledPercentage <= break2
@@ -165,27 +151,29 @@ import Image from "astro/components/Image.astro";
           scrolledPercentage > break3 &&
           scrolledPercentage <= break4
         ) {
-          para1.style.top = "10%";
-          para2.style.top = "200%";
 
           if (isMobile) {
             mainTitle.style.top = "81%";
+            para1.style.top = "10%";
           } else if (isTablet) {
             mainTitle.style.top = "76%";
-          }else if (isLaptop) {
-
+            para1.style.top = "-10%";
+          } else if (isLaptop) {
             mainTitle.style.top = "56%";
           }
         } else if (
           scrolledPercentage > break4 &&
           scrolledPercentage <= break5
         ) {
-            para2.style.top = "0%";
-          if (isMobile || isTablet) {
-            mainTitle.style.top = "70%";
-          } else if (isLaptop) {
-            mainTitle.style.top = "60%";
-          }
+
+          para2.style.top = "0%"
+          // if (isMobile) {
+          //   mainTitle.style.top = "60%";
+          // } else if (isTablet) {
+          //   mainTitle.style.top = "60%";
+          // } else if (isLaptop) {
+          //   mainTitle.style.top = "62%";
+          // }
         }
       });
     </script>
