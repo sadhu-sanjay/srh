@@ -22,7 +22,7 @@ import Image from "astro/components/Image.astro";
         <span>A</span><span id="letterR" class="relative"
           >R<p
             id="para1"
-            class="absolute right-0 top-[200%] h-28 w-32 -translate-y-full whitespace-pre-wrap text-wrap text-right text-xs sm:text-base font-bold leading-tight text-secondary-accent transition-all duration-700"
+            class="absolute right-0 top-[200%] h-28 w-32 -translate-y-full whitespace-pre-wrap text-wrap text-right text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base"
           >
             We harness empirical marketing(1) to awaken brands to their true
             potential
@@ -35,7 +35,7 @@ import Image from "astro/components/Image.astro";
           ><span class="relative"
             >S<p
               id="para2"
-              class="absolute left-0 top-[200%] h-28 w-32 -translate-y-full text-wrap text-left text-xs sm:text-base font-bold leading-tight text-secondary-accent transition-all duration-700"
+              class="absolute left-0 top-[200%] h-28 w-32 -translate-y-full text-wrap text-left text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base"
             >
               We use strategy, creative and media to make brands famous in their
               categories.
@@ -93,13 +93,8 @@ import Image from "astro/components/Image.astro";
         const scrolledPercentage = (scrollY / scrobbaleHeight) * 100;
         console.log("here & There", scrolledPercentage);
 
-        function mainTitleAnimation() {
-          if (isMobile) {
-          } else {
-          }
-        }
-
-        if (scrolledPercentage <= break1) { // STEP 0
+        if (scrolledPercentage <= break1) {
+          // STEP 0
           logo.style.left = "50%";
           logo.style.top = "50%";
           logo.style.transform = "translate(-50%,-50%)";
@@ -110,7 +105,8 @@ import Image from "astro/components/Image.astro";
 
           para1.style.top = "200%";
           para2.style.top = "200%";
-        } else if ( // STEP 1
+        } else if (
+          // STEP 1
           scrolledPercentage > break1 &&
           scrolledPercentage <= break2
         ) {
@@ -131,7 +127,8 @@ import Image from "astro/components/Image.astro";
           }
 
           iExpendable.style.transform = "scaleY(1)";
-        } else if ( // STEP 2
+        } else if (
+          // STEP 2
           scrolledPercentage > break2 &&
           scrolledPercentage <= break3
         ) {
@@ -148,15 +145,15 @@ import Image from "astro/components/Image.astro";
           } else if (isLargeDesktop) {
             iExpendable.style.transform = "scaleY(1.8)";
           }
-        } else if ( // STEP 3
+        } else if (
+          // STEP 3
           scrolledPercentage > break3 &&
           scrolledPercentage <= break4
         ) {
-
           if (isMobile) {
-            mainTitle.style.top = "81%";
+            mainTitle.style.top = "83%";
             para1.style.top = "10%";
-            para2.style.top = "200%"
+            para2.style.top = "200%";
           } else if (isTablet) {
             mainTitle.style.top = "76%";
             para1.style.top = "-10%";
@@ -164,20 +161,23 @@ import Image from "astro/components/Image.astro";
             mainTitle.style.top = "56%";
             para1.style.top = "-10%";
           } else if (isDesktop) {
-
-          }
-        } else if ( // STEP 4
+            para1.style.top = "0%";
+          } 
+        } else if (
+          // STEP 4
           scrolledPercentage > break4 &&
           scrolledPercentage <= break5
         ) {
-
           if (isMobile) {
-            mainTitle.style.top = "85%";
-            para2.style.top = "-10%"
+            mainTitle.style.top = "86%";
+            para2.style.top = "-10%";
           } else if (isTablet) {
-            mainTitle.style.top = "60%";
+            mainTitle.style.top = "80%";
+            para2.style.top = "-10%";
           } else if (isLaptop) {
             mainTitle.style.top = "62%";
+          }else if (isDesktop) {
+            para2.style.top = "-10%";
           }
         }
       });
