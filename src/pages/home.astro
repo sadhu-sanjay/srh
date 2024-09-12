@@ -21,13 +21,13 @@ import Image from "astro/components/Image.astro";
 
       <div
         id="iExpendable"
-        class="absolute bottom-1/2 left-1/2 z-10 ml-0.5 xl:ml-2 h-12 w-[1.35rem] xl:w-[5.2rem] origin-bottom bg-white transition-transform duration-700"
+        class="absolute bottom-1/2 left-1/2 z-10 ml-0.5 h-12 w-[1.35rem] origin-bottom bg-white transition-transform duration-700 xl:ml-2 xl:w-[5.2rem]"
       >
       </div>
 
       <div
         id="subText"
-        class="w-full -translate-y-3 xl:-translate-y-16 whitespace-nowrap text-center text-[9.5vw] font-black leading-none"
+        class="w-full -translate-y-3 whitespace-nowrap text-center text-[9.5vw] font-black leading-none xl:-translate-y-16"
       >
         YE SLEEPING GIANTS
       </div>
@@ -35,14 +35,14 @@ import Image from "astro/components/Image.astro";
 
     <p
       id="para1"
-      class="sticky left-1/2 p-2 -translate-x-full top-[200%] h-28 w-32 whitespace-pre-wrap text-wrap text-right text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base"
+      class="sticky left-1/2 top-[200%] h-28 w-32 -translate-x-[110%] whitespace-pre-wrap text-wrap text-right text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:text-xl"
     >
       We harness empirical marketing(1) to awaken brands to their true potential
     </p>
 
     <p
       id="para2"
-      class="sticky translate-x-7  left-1/2 top-[200%] h-28 w-32 text-left text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base"
+      class="sticky left-1/2 top-[200%] h-28 w-32 translate-x-7 text-left text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:translate-x-32 xl:text-xl"
     >
       We use strategy, creative and media to make brands famous in their
       categories.
@@ -73,7 +73,6 @@ import Image from "astro/components/Image.astro";
         "(min-width: 1280px) and (max-width: 1535px)"
       ).matches;
       const isDesktop = window.matchMedia("(min-width: 1536px)").matches;
-
 
       window.addEventListener("scroll", (ev: Event) => {
         const scrollY = window.scrollY;
@@ -124,8 +123,9 @@ import Image from "astro/components/Image.astro";
           scrolledPercentage > break2 &&
           scrolledPercentage <= break3
         ) {
+          para1.style.top = "200%";
+
           if (isMobile) {
-            para1.style.top = "200%";
             mainTitle.style.top = "78%";
             iExpendable.style.transform = "scaleY(12)";
           } else if (isTablet) {
@@ -153,7 +153,8 @@ import Image from "astro/components/Image.astro";
             mainTitle.style.top = "56%";
             para1.style.top = "-10%";
           } else if (isLaptopWithHIdpi) {
-            para1.style.top = "0%";
+            para1.style.top = "15%";
+            para2.style.top = "200%";
           }
         } else if (
           // STEP 4
