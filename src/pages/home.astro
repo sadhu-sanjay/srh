@@ -1,10 +1,11 @@
 ---
 import Image from "astro/components/Image.astro";
-const iWidth = "2rem"
+const iWidth = "1.8rem"
 ---
 
 <main id="main-window" class="relative h-[100dvh] w-full bg-white">
   <div id="spacer" class="h-[400dvh] w-full bg-primary">
+
     <img
       id="logo"
       src="SRHLogo_Glitch.gif"
@@ -14,15 +15,16 @@ const iWidth = "2rem"
 
     <div
       id="mainTitle"
-      class="sticky top-full z-20 w-full justify-between text-center text-accent transition-all duration-700"
+      class=" bg-red-700 sticky top-full z-20 w-full justify-between text-center text-accent transition-all duration-700"
     >
+
       <text class="text-center text-7xl text-[33dvw] font-black leading-none">
-        AR<span class="absolute left-1/2">ISE</span>
+        AR<span class="-ml-[0.22rem]">I</span>SE
       </text>
 
       <div
         id="iExpendable"
-        class="absolute bottom-1/2 left-1/2 z-10 ml-0.5 h-12 w-[1.35rem] origin-bottom bg-white transition-transform duration-700 xl:ml-2 xl:w-[5.2rem]"
+        class="absolute bottom-1/2 left-1/2 h-12 w-[1.40rem] origin-bottom bg-white transition-transform duration-700 xl:ml-2 xl:w-[5.2rem]"
       >
       </div>
 
@@ -35,7 +37,7 @@ const iWidth = "2rem"
 
       <p
         id="para1"
-        class="absolute left-1/2 h-28 w-32 -translate-x-[110%] whitespace-pre-wrap text-wrap text-right text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:text-xl"
+        class="absolute left-1/2 h-28 w-32 -translate-x-full  whitespace-pre-wrap text-wrap text-right text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:text-xl"
       >
         We harness empirical marketing(1) to awaken brands to their true
         potential
@@ -49,7 +51,7 @@ const iWidth = "2rem"
         categories.
       </p>
 
-      <svg class="absolute left-1/2 top-0" fill="black" height="200px" width={iWidth} version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M508.8,278.947L263.467,35.107c-4.16-4.16-10.88-4.16-15.04,0L3.2,279.053c-2.027,2.027-3.093,4.693-3.2,7.573v182.72 c0,5.867,4.8,10.667,10.667,10.667c2.88,0,5.547-1.173,7.573-3.093L256,238.947l237.867,237.76 c4.16,4.16,10.987,4.053,15.04-0.107c1.92-1.92,2.987-4.587,3.093-7.36V286.52C512,283.64,510.827,280.867,508.8,278.947z M490.667,443.427l-227.2-227.093c-4.267-4.053-10.88-4.053-15.04,0L21.333,443.64V291.107L256,57.72l234.667,233.173V443.427z"></path> </g> </g> </g></svg>
+      <svg class="absolute z-10 top-0 left-1/2 w-6 border-0" height={iWidth} width={iWidth} fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 490 490" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <polygon points="0,249.888 245.004,8.139 490,249.888 490,481.861 245.004,239.71 0,481.861 "></polygon> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg> 
 
     </div>
   </div>
