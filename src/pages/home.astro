@@ -50,6 +50,13 @@ const iWidth = "1.8rem";
       >
       </div>
 
+      <svg id="arrow" class=" bg-transparent  absolute top-[200%] left-1/2 transition-all duration-1000  i-width aspect-square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 490">
+        <polygon style="fill: lightgray;"
+          points="0,249.888 245.004,8.139 499,249.888 499,481.861 245.004,239.71 0,481.861 "
+        ></polygon>
+      </svg>
+
+
       <div
         id="subText"
         class="w-full -translate-y-3 whitespace-nowrap text-center text-[9.5vw] font-black leading-none xl:-translate-y-16"
@@ -67,19 +74,11 @@ const iWidth = "1.8rem";
 
       <p
         id="para2"
-        class="absolute left-1/2 top-[200%] h-28 w-32 translate-x-7 text-left text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:translate-x-32 xl:text-xl"
+        class="absolute s left-1/2 top-[200%] h-28 w-32 translate-x-7 text-left text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:translate-x-32 xl:text-xl"
       >
         We use strategy, creative and media to make brands famous in their
         categories.
       </p>
-
-      <div class="i-width absolute left-1/2 top-0 bg-green-900">hi</div>
-
-      <svg class="absolute left-1/2 top-20 i-width aspect-square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 490">
-        <polygon
-          points="0,249.888 245.004,8.139 499,249.888 499,481.861 245.004,239.71 0,481.861 "
-        ></polygon>
-      </svg>
 
     </div>
   </div>
@@ -94,11 +93,11 @@ const iWidth = "1.8rem";
   const break6 = 60;
 
   const logo = document.getElementById("logo") as HTMLImageElement;
-  const main = document.getElementById("main-section") as HTMLElement;
   const mainTitle = document.getElementById("mainTitle") as HTMLElement;
   const iExpendable = document.getElementById("iExpendable") as HTMLElement;
   const para1 = document.getElementById("para1") as HTMLElement;
   const para2 = document.getElementById("para2") as HTMLElement;
+  const arrow = document.getElementById("arrow") as HTMLElement;
 
   const isMobile = window.matchMedia("(max-width: 639px)").matches;
   const isTablet = window.matchMedia(
@@ -171,7 +170,7 @@ const iWidth = "1.8rem";
       } else if (isLaptop) {
         iExpendable.style.transform = "scaleY(3)";
       } else if (isLaptopWithHIdpi) {
-        iExpendable.style.transform = "scaleY(12)";
+        iExpendable.style.transform = "scaleY(18)";
       } else if (isDesktop) {
         iExpendable.style.transform = "scaleY(1.8)";
       }
@@ -200,10 +199,12 @@ const iWidth = "1.8rem";
       scrolledPercentage > break4 &&
       scrolledPercentage <= break5
     ) {
+
       if (isMobile) {
         mainTitle.style.top = "86%";
         para1.style.top = "-83%";
         para2.style.top = "-93%";
+        arrow.style.top = "200%"
       } else if (isTablet) {
         mainTitle.style.top = "80%";
         para2.style.top = "-10%";
@@ -213,19 +214,20 @@ const iWidth = "1.8rem";
         para1.style.top = "-45%";
         para2.style.top = "-55%";
         mainTitle.style.top = "60%";
+        arrow.style.top = "200%"
       }
     } else if (scrolledPercentage > break5 && scrolledPercentage <= break6) {
       // STEP 5
-      // STEP 5: Move `mainTitle`, `para1`, and `para2` together toward the top
-      let moveValue = 8;
 
       if (isMobile) {
-        mainTitle.style.top = `${parseFloat(mainTitle.style.top) + moveValue}%`;
+        mainTitle.style.top = "96%"
+        arrow.style.top = "-200%"
+
       } else if (isLaptopWithHIdpi) {
-        let newMove = moveValue / 2;
-        mainTitle.style.top = `${parseFloat(mainTitle.style.top) + newMove}%`;
+        mainTitle.style.top = "75%"
+        arrow.style.top = "-85%"
       } else {
-        mainTitle.style.top = `${parseFloat(mainTitle.style.top) + moveValue}%`;
+        // mainTitle.style.top = `${parseFloat(mainTitle.style.top) + moveValue}%`;
       }
     }
   });
