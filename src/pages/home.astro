@@ -58,20 +58,13 @@ const iWidth = "1.8rem";
       >
       </div>
 
-      <div
-        id="arrowGroup"
-        class="absolute right-1/2 top-0 flex bg-black transition-all duration-1000"
-      >
-        <p
-          id="para3"
-          style="writing-mode: sideways-lr;"
-          class="relative top-1/3 bg-red-600 text-lg font-bold text-secondary-accent"
-        >
-          Let's climb together.
-        </p>
+      <div class="absolute right-1/2 top-0 bg-green-800 flex">
+        <div style="writing-mode:sideways-lr; " class="font-bold text-xl 2xl:text-4xl text-secondary-accent mr-4">
+          Let's climb together <br/> hi how are you doing
+        </div>
         <svg
           id="arrow"
-          class="i-width aspect-square translate-x-full bg-transparent"
+          class="i-width aspect-square bg-transparent translate-x-full absolute right-0"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 490 490"
         >
@@ -124,7 +117,9 @@ const iWidth = "1.8rem";
   const arrowGroup = document.getElementById("arrowGroup") as HTMLElement;
 
   const isMobile = window.matchMedia("(max-width: 639px)").matches;
-  const isTablet = window.matchMedia("(min-width: 640px) and (max-width: 1023px)").matches
+  const isTablet = window.matchMedia(
+    "(min-width: 640px) and (max-width: 1023px)"
+  ).matches;
   const isLaptop = window.matchMedia(
     "(min-width: 1024px) and (max-width: 1279px)"
   ).matches;
