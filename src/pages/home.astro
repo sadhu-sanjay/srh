@@ -1,13 +1,14 @@
 ---
-import Image from "astro/components/Image.astro";
 const iWidth = "1.8rem";
+import ThreeArrow from "../Icons/ThreeArrow.astro";
 ---
 
-<div class="lg sm:w-0"></div>
-
-<style>
+<style is:global>
   .i-width {
     width: 1.36rem;
+  }
+  .margin-right-custom {
+    margin-right: 2rem;
   }
 
   @media (min-width: 768px and max-width: 1023px) {
@@ -22,15 +23,21 @@ const iWidth = "1.8rem";
     }
   }
 
-  @media (min-width: 1280px) and (max-width: 1535px) {
+  @media (min-width: 1280px) {
     .i-width {
       width: 5.3rem;
     }
+    .margin-right-custom {
+      margin-right: 1rem;
+    }
   }
 
-  @media (min-width: 1536px) {
+  @media (min-width: 1536px) and (max-width: 1920px) {
     .i-width {
       width: 7rem;
+    }
+    .margin-right-custom {
+      margin-right: 1.2rem;
     }
   }
 </style>
@@ -58,22 +65,18 @@ const iWidth = "1.8rem";
       >
       </div>
 
-      <div class="absolute right-1/2 top-0 bg-green-800 flex">
-        <div style="writing-mode:sideways-lr; " class="font-bold text-xl 2xl:text-4xl text-secondary-accent mr-4">
-          Let's climb together <br/> hi how are you doing
-        </div>
-        <svg
-          id="arrow"
-          class="i-width aspect-square bg-transparent translate-x-full absolute right-0"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 490 490"
-        >
-          <polygon
-            style="fill: purple;"
-            points="0,249.888 245.004,8.139 499,249.888 499,481.861 245.004,239.71 0,481.861 "
-          ></polygon>
-        </svg>
+      <div
+        id="para3"
+        style="writing-mode: sideways-lr;"
+        class=" transition-all duration-1000 margin-right-custom absolute right-1/2 top-0 font-bold text-secondary-accent xl:text-5xl 2xl:text-7xl"
+      >
+        Let's climb <br /> together
       </div>
+
+      <ThreeArrow
+        id="arrow"
+        class="i-width absolute left-1/2 top-[200%] bg-transparent transition-all duration-1000"
+      />
 
       <div
         id="subText"
@@ -84,7 +87,7 @@ const iWidth = "1.8rem";
 
       <p
         id="para1"
-        class="absolute right-1/2 mr-2 h-28 w-32 whitespace-pre-wrap text-wrap text-right text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:text-xl"
+        class="margin-right-custom absolute right-1/2 h-28 w-32 whitespace-pre-wrap text-wrap text-right text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:text-2xl"
       >
         We harness empirical marketing(1) to awaken brands to their true
         potential
@@ -92,7 +95,7 @@ const iWidth = "1.8rem";
 
       <p
         id="para2"
-        class="absolute left-1/2 top-[200%] h-28 w-32 translate-x-7 text-left text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:translate-x-32 xl:text-xl"
+        class="absolute left-1/2 top-[200%] h-28 w-32 translate-x-7 text-left text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:translate-x-32 xl:text-2xl"
       >
         We use strategy, creative and media to make brands famous in their
         categories.
@@ -114,7 +117,8 @@ const iWidth = "1.8rem";
   const iExpendable = document.getElementById("iExpendable") as HTMLElement;
   const para1 = document.getElementById("para1") as HTMLElement;
   const para2 = document.getElementById("para2") as HTMLElement;
-  const arrowGroup = document.getElementById("arrowGroup") as HTMLElement;
+  const para3 = document.getElementById("para3") as HTMLElement;
+  const arrow = document.getElementById("arrow") as HTMLElement;
 
   const isMobile = window.matchMedia("(max-width: 639px)").matches;
   const isTablet = window.matchMedia(
@@ -148,6 +152,8 @@ const iWidth = "1.8rem";
 
       para1.style.top = "200%";
       para2.style.top = "200%";
+      para3.style.top = "200%";
+      arrow.style.top = "200%";
     } else if (
       // STEP 1
       scrolledPercentage > break1 &&
@@ -212,6 +218,10 @@ const iWidth = "1.8rem";
         mainTitle.style.top = "56%";
         para1.style.top = "-45%";
         para2.style.top = "200%";
+      } else if (isDesktop) {
+        mainTitle.style.top = "56%";
+        para1.style.top = "-30%";
+        para2.style.top = "200%";
       }
     } else if (
       // STEP 4
@@ -222,7 +232,7 @@ const iWidth = "1.8rem";
         mainTitle.style.top = "86%";
         para1.style.top = "-83%";
         para2.style.top = "-93%";
-        arrowGroup.style.top = "200%";
+        arrow.style.top = "200%";
       } else if (isTablet) {
         mainTitle.style.top = "80%";
         para2.style.top = "-10%";
@@ -232,19 +242,27 @@ const iWidth = "1.8rem";
         para1.style.top = "-45%";
         para2.style.top = "-55%";
         mainTitle.style.top = "60%";
-        arrowGroup.style.top = "200%";
+        arrow.style.top = "96%";
+        para3.style.top = "96%";
+      } else if (isDesktop) {
+        para1.style.top = "-30%";
+        para2.style.top = "-55%";
+        mainTitle.style.top = "60%";
+        arrow.style.top = "96%";
       }
     } else if (scrolledPercentage > break5 && scrolledPercentage <= break6) {
       // STEP 5
 
       if (isMobile) {
         mainTitle.style.top = "96%";
-        arrowGroup.style.top = "-200%";
+        arrow.style.top = "-200%";
       } else if (isLaptopLarge) {
+        mainTitle.style.top = "80%";
+        arrow.style.top = "-110%";
+        para3.style.top = "-110%";
+      } else if (isDesktop) {
         mainTitle.style.top = "75%";
-        arrowGroup.style.top = "-85%";
-      } else {
-        // mainTitle.style.top = `${parseFloat(mainTitle.style.top) + moveValue}%`;
+        arrow.style.top = "-95%";
       }
     }
   });
