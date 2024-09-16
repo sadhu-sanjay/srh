@@ -8,7 +8,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
     width: 1.36rem;
   }
   .margin-right-custom {
-    margin-right: 2rem;
+    margin-right: 0.4rem;
   }
 
   @media (min-width: 768px and max-width: 1023px) {
@@ -43,7 +43,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 </style>
 
 <main id="main-window" class="relative h-[100dvh] w-full bg-white">
-  <div id="spacer" class="h-[400dvh] w-full bg-primary">
+  <div id="spacer" class="h-[700dvh] w-full bg-primary">
     <img
       id="logo"
       src="SRHLogo_Glitch.gif"
@@ -68,9 +68,9 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
       <div
         id="para3"
         style="writing-mode: sideways-lr;"
-        class=" transition-all duration-1000 margin-right-custom absolute right-1/2 top-0 font-bold text-secondary-accent xl:text-5xl 2xl:text-7xl"
+        class="margin-right-custom absolute right-1/2 top-[200%] font-bold text-secondary-accent transition-all duration-1000 xl:text-5xl 2xl:text-7xl"
       >
-        Let's climb <br /> together
+        Let's climb <br /> together.
       </div>
 
       <ThreeArrow
@@ -87,7 +87,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
       <p
         id="para1"
-        class="margin-right-custom absolute right-1/2 h-28 w-32 whitespace-pre-wrap text-wrap text-right text-xs font-bold xl:font-normal leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:text-2xl"
+        class="margin-right-custom absolute right-1/2 h-28 w-32 whitespace-pre-wrap text-wrap text-right text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:text-2xl xl:font-normal"
       >
         We harness empirical marketing(1) to awaken brands to their true
         potential
@@ -95,7 +95,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
       <p
         id="para2"
-        class="absolute left-1/2 top-[200%] h-28 w-32 translate-x-7 text-left text-xs font-bold xl:font-normal leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:translate-x-32 xl:text-2xl"
+        class="absolute left-1/2 top-[200%] h-28 w-32 translate-x-7 text-left text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:translate-x-32 xl:text-2xl xl:font-normal"
       >
         We use strategy, creative and media to make brands famous in their
         categories.
@@ -111,6 +111,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
   const break4 = 40;
   const break5 = 50;
   const break6 = 60;
+  const break7 = 70;
 
   const logo = document.getElementById("logo") as HTMLImageElement;
   const mainTitle = document.getElementById("mainTitle") as HTMLElement;
@@ -195,7 +196,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
       } else if (isLaptop) {
         iExpendable.style.transform = "scaleY(3)";
       } else if (isLaptopLarge) {
-        iExpendable.style.transform = "scaleY(18)";
+        iExpendable.style.transform = "scaleY(40)";
       } else if (isDesktop) {
         iExpendable.style.transform = "scaleY(20)";
       }
@@ -233,6 +234,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         para1.style.top = "-83%";
         para2.style.top = "-93%";
         arrow.style.top = "200%";
+        para3.style.top = "200%";
       } else if (isTablet) {
         mainTitle.style.top = "80%";
         para2.style.top = "-10%";
@@ -256,6 +258,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
       if (isMobile) {
         mainTitle.style.top = "96%";
         arrow.style.top = "-200%";
+        para3.style.top = "-200%";
       } else if (isLaptopLarge) {
         mainTitle.style.top = "80%";
         arrow.style.top = "-110%";
@@ -263,6 +266,18 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
       } else if (isDesktop) {
         mainTitle.style.top = "75%";
         arrow.style.top = "-95%";
+      }
+
+      arrow.style.transitionDuration = "1s";
+      arrow.style.opacity = "1"
+    } else if (scrolledPercentage > break6 && scrolledPercentage <= break7) {
+      arrow.style.transitionDuration = "1.5s";
+      arrow.style.opacity = "0.05"
+
+      if (isMobile) {
+      } else if (isLaptopLarge) {
+        arrow.style.top = "-270%";
+        mainTitle.style.top = "200%";
       }
     }
   });
