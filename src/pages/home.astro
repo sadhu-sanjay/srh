@@ -49,7 +49,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
     id="spacer"
     class="relative -left-[10%] h-[700dvh] w-[120%] border-4 border-rose-800 bg-primary"
   >
-    <div class="sticky left-1/2 top-1/2 h-48 w-48 bg-pink-800">Hi</div>
+    <!-- <div class="sticky left-1/2 top-1/2 h-48 w-48 bg-pink-800">Hi</div> -->
 
     <img
       id="logo"
@@ -58,11 +58,11 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
       class="sticky left-1/2 top-1/2 w-1/3 -translate-x-1/2 -translate-y-1/2 bg-secondary-accent transition-all duration-700 sm:w-3/12 sm:landscape:w-1/12"
     />
 
-    <!-- <div
+    <div
       id="circles"
-      class="sticky left-1/2 aspect-square h-[60dvh] rounded-full bg-green-700 transition-all duration-700 sm:h-[150dvh] md:h-[160dvh]"
+      class="sticky left-1/2 top-1/2 aspect-square h-[60dvh] rounded-full bg-green-700 transition-all duration-700 sm:h-[150dvh] md:h-[160dvh]"
     >
-    </div> -->
+    </div>
 
     <div
       id="mainTitle"
@@ -163,7 +163,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
     console.log("%%", scrolledPercentage);
 
     if (scrolledPercentage <= break1) {
-      // STEP 0
+
       logo.style.left = "50%";
       logo.style.top = "50%";
       logo.style.transform = "translate(-50%,-50%)";
