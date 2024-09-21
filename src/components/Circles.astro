@@ -1,0 +1,50 @@
+---
+interface Props {
+  class: string;
+  id: string;
+}
+const { class: className, id } = Astro.props;
+---
+
+<svg
+  id={id}
+  class={className}
+  viewBox="0 0 500 500"
+  xmlns="http://www.w3.org/2000/svg"
+  style="background-color: red;"
+>
+  <!-- Circles will be inserted here -->
+</svg>
+
+<script define:vars={{ id }}>
+  const parentSVG = document.getElementById(id);
+  let circleCount = 1;
+  let maxRadius = 250;
+
+  while (circleCount > 0) {
+    // Decrease the circle count
+    circleCount -= 1;
+
+    // Create a new circle element
+    const circle = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "circle"
+    );
+
+    // Set the attributes for the circle (center at 250, 250 with decreasing radius)
+    circle.setAttribute("cx", "250"); // X coordinate of the center
+    circle.setAttribute("cy", "250"); // Y coordinate of the center
+    circle.setAttribute("r", maxRadius); // Radius
+
+    // Set stroke and fill to visualize the circles
+    circle.setAttribute("stroke", "white");
+    circle.setAttribute("stroke-width", "2");
+    circle.setAttribute("fill", "rgb(var(--accent))");
+
+    // Decrease the radius for the next circle
+    maxRadius -= 20;
+
+    // Append the circle to the SVG element
+    parentSVG.appendChild(circle);
+  }
+</script>
