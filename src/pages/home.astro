@@ -58,6 +58,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
     id="spacer"
     class="relative left-1/2 h-[700dvh] w-[120%] -translate-x-1/2 border-4 border-rose-800 bg-primary"
   >
+
     <div
       id="circleDiv"
       class="absolute opacity-100 top-[50dvh] -translate-y-1/2  h-[140dvh] w-full bg-white transition-all delay-1000 duration-1000"
@@ -314,8 +315,8 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
           arrow.style.top = "-110%";
           para3.style.top = "-110%";
 
-          circleDiv.style.top = "-100%";
-          circleDiv.style.opacity = "0";
+          // circleDiv.style.top = "100%";
+          // circleDiv.style.opacity = "0";
 
         } else if (isDesktop) {
           mainTitle.style.top = "75%";
@@ -329,11 +330,13 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         arrow.style.opacity = "0";
 
         if (isMobile) {
+
         } else if (isLaptopLarge) {
+
           arrow.style.top = "-270%";
           mainTitle.style.top = "200%";
 
-          circleDiv.style.top = "-15%";
+          // circleDiv.style.top = "50dvh";
           circleDiv.style.opacity = "1";
 
         }
