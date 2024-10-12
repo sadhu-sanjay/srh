@@ -7,6 +7,9 @@ export default {
 				primary: `rgba(var(--primary), <alpha-value>)`,
 				accent: `rgba(var(--accent), <alpha-value>)`,
 				"secondary-accent": `rgba(var(--secondary-accent), <alpha-value>)`
+			},
+			fontSize: {
+				primaryText: "33dvw"
 			}	
 		},
 	},

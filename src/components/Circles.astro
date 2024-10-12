@@ -1,15 +1,15 @@
+<!-- class="sticky -top-[140dvh] h-[140dvh] w-full translate-x-20  opacity-0 transition-all delay-700 duration-1000" -->
 <div
-  class="sticky -top-[140dvh] h-[140dvh] w-full translate-x-20  opacity-0 transition-all delay-700 duration-1000"
+  class="sticky h-[140dvh] w-full transition-all delay-700 duration-1000"
   id="circleSvg"
 >
-    <svg 
+  <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 200 200"
     width="100%"
     height="100%"
     class="bg-yellow-800"
   >
-  
     <!-- Define a shadow filter -->
 
     <defs>
@@ -43,38 +43,49 @@
     <circle class="shadow-lg" cx="100" cy="100" r="25" fill="#dc2626"></circle>
   </svg>
 
-  <h1 class="absolute left-0 top-0" >FAME</b>
-    <h2>BUILDERS</h2>
+  <h1
+    class="absolute left-1/2 top-40 w-[100dvw] -translate-x-1/2 bg-blue-900 text-[35dvw] font-black leading-none text-secondary-accent"
+  >
+    F<span class="relative bg-pink-900"
+      >A<div
+        class="absolute left-0 top-0 w-auto text-8xl font-black leading-none text-secondary-accent"
+      >
+        BUILDERS
+        <div class="w-5/6 text-xl font-normal text-secondary-accent">
+          SRH spans entertainment and advertising, giving you access to top
+          talent and big ideas. <br /><br /> We believe that big, bold stunts can
+          be the most efficient way to build mental availability (1).
+        </div>
+      </div></span
+    >ME
   </h1>
 
-</div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const svgElement = document.getElementById("circleSvg") as HTMLElement;
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const svgElement = document.getElementById("circleSvg") as HTMLElement;
+      // Create an IntersectionObserver
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Add 'center' class when the element is in view
+              svgElement.classList.add("center");
+            } else {
+              // Remove 'center' class when it's out of view
+              svgElement.classList.remove("center");
+            }
+          });
+        },
+        { threshold: 0.5 }
+      ); // Adjust threshold as needed
 
-    // Create an IntersectionObserver
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Add 'center' class when the element is in view
-            svgElement.classList.add("center");
-          } else {
-            // Remove 'center' class when it's out of view
-            svgElement.classList.remove("center");
-          }
-        });
-      },
-      { threshold: 0.5 }
-    ); // Adjust threshold as needed
+      // Observe the SVG element
+      observer.observe(svgElement);
+    });
+  </script>
 
-    // Observe the SVG element
-    observer.observe(svgElement);
-  });
-</script>
-
-<!-- <div
+  <!-- <div
   id="circleDiv"
   class="sticky -top-[140dvh] h-[140dvh] w-full bg-white opacity-0 transition-all delay-1000 duration-1000"
 >
@@ -109,3 +120,4 @@
     </div>
   </div>
 </div> -->
+</div>
