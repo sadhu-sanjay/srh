@@ -136,6 +136,8 @@ import FameText from "../components/FameText.astro";
     const circles = document.getElementById("circles") as HTMLElement;
     const circleSvg = document.getElementById("circleSvg") as HTMLElement;
     const mainWindow = document.getElementById("main-window") as HTMLElement;
+    const builders = document.getElementById("builders") as HTMLElement;
+    const fame = document.getElementById("fame") as HTMLElement;
 
     const isMobile = window.matchMedia("(max-width: 639px)").matches;
     const isTablet = window.matchMedia(
@@ -284,6 +286,10 @@ import FameText from "../components/FameText.astro";
 
           circleSvg.style.opacity = "0";
           circleSvg.style.top = "-140dvh";
+
+          // fame.style.top = "-100%";
+          // builders.style.left = "-100%";
+
         } else if (isDesktop) {
           mainTitle.style.top = "75%";
           arrow.style.top = "-95%";
@@ -302,6 +308,10 @@ import FameText from "../components/FameText.astro";
 
           circleSvg.style.opacity = "1";
           circleSvg.style.top = "0";
+
+          // fame.style.top = "0";
+          // builders.style.left = "0";
+
         }
       } else if (scrolledPercentage > break7 && scrolledPercentage <= break8) {
         if (isMobile) {
