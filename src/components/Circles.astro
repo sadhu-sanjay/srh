@@ -24,58 +24,27 @@
       </filter>
     </defs>
 
-    <circle cx="120" cy="90" r="100" fill-opacity="0.2" fill="#fee2e2"></circle>
+    <circle cx="120" cy="90" r="100" fill="rgba(var(--accent), 0.4)"></circle>
 
-    <circle cx="120" cy="90" r="85" fill-opacity="0.2" fill="#fecaca"></circle>
+    <circle cx="120" cy="90" r="85" fill="rgba(var(--accent), 0.2)"></circle>
 
-    <circle cx="120" cy="90" r="70" fill-opacity="0.2" fill="#fca5a5"></circle>
+    <circle cx="120" cy="90" r="70" fill="rgba(var(--accent), 0.4)"></circle>
 
-    <circle cx="120" cy="90" r="55" fill-opacity="0.2" fill="#f87171"></circle>
+    <circle cx="120" cy="90" r="55" fill="rgba(var(--accent), 0.5)"></circle>
 
-    <circle cx="120" cy="90" r="40" fill-opcaity="0.2" fill="#ec4899"></circle>
+    <circle cx="120" cy="90" r="40"  fill="rgba(var(--accent), 0.6)"></circle>
 
-    <circle cx="120" cy="90" r="25" fill="rgb(var(--accent))"> </circle>
+    <circle cx="120" cy="90" r="25" fill="rgb(var(--accent))" > </circle>
   </svg>
-
-  <!-- <div
-    id="circle1"
-    class="absolute left-1/2 -translate-x-1/2  aspect-square h-full overflow-clip rounded-full bg-red-100 transition-all duration-700"
-  >
-    <div
-      id="circle2"
-      class="absolute left-1/2 top-1/2 aspect-square h-[85%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-200 transition-all duration-700"
-    >
-    </div>
-    <div
-      id="circle3"
-      class="absolute left-1/2 top-1/2 aspect-square h-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-300 transition-all duration-700"
-    >
-    </div>
-    <div
-      id="circle3"
-      class="absolute left-1/2 top-1/2 aspect-square h-[55%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-400 transition-all duration-700"
-    >
-    </div>
-    <div
-      id="circle3"
-      class="absolute left-1/2 top-1/2 aspect-square h-[40%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-500 transition-all duration-700"
-    >
-    </div>
-    <div
-      id="circle3"
-      class="absolute left-1/2 top-1/2 aspect-square h-[25%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-600 transition-all duration-700"
-    >
-    </div>
-  </div> -->
 
   <h1
     id="fame"
-    class="absolute delay-1000 duration-1000  transition-all -top-full left-1/2 w-[100dvw] -translate-x-1/2 text-[35dvw] font-black leading-none text-secondary-accent"
+    class="absolute -top-full left-1/2 w-[100dvw] -translate-x-1/2 text-[35dvw] font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
   >
     F<span class="relative inline-block"
       >A<div
         id="builders"
-        class="absolute delay-1000 -left-full top-[87%] w-auto text-8xl font-black leading-none text-secondary-accent transition-all  duration-1000"
+        class="absolute -left-full top-[87%] w-auto text-8xl font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
       >
         BUILDERS
         <div class="leading-2 w-5/6 text-xl font-normal text-secondary-accent">
@@ -89,6 +58,8 @@
   </h1>
 
   <script>
+
+    const numberOfCircles = [1, 2, 3, 4, 5, 6, 7];
 
     const break5 = 50;
     const break6 = 60;
@@ -105,7 +76,6 @@
       const scrollableHeight = target.scrollHeight - window.outerHeight;
       const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
 
-
       if (scrollPercentage > break5 && scrollPercentage <= break6) {
         fame.style.top = "-100%";
         builders.style.left = "-100%";
@@ -113,10 +83,7 @@
         fame.style.top = "0";
         builders.style.left = "0";
       }
-
     });
-
-   
   </script>
 
   <!--  -->
