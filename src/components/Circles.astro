@@ -1,10 +1,10 @@
 <div
   class="sticky -top-[140dvh] h-[140dvh] w-full opacity-0 transition-all delay-700 duration-1000"
-  id="circleSvg"
+  id="svg-circles"
 >
   <!-- <div
   class=" sticky h-[140dvh] w-full transition-all delay-700 duration-1000"
-  id="circleSvg"
+  id="svg-circles"
 > -->
 
   <svg
@@ -12,6 +12,7 @@
     viewBox="0 0 200 200"
     width="100%"
     height="100%"
+    id="svgEl"
   >
     <defs>
       <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
@@ -23,18 +24,7 @@
           flood-opacity="0.2"></feDropShadow>
       </filter>
     </defs>
-
-    <circle cx="120" cy="90" r="100" fill="rgba(var(--accent), 0.4)"></circle>
-
-    <circle cx="120" cy="90" r="85" fill="rgba(var(--accent), 0.2)"></circle>
-
-    <circle cx="120" cy="90" r="70" fill="rgba(var(--accent), 0.4)"></circle>
-
-    <circle cx="120" cy="90" r="55" fill="rgba(var(--accent), 0.5)"></circle>
-
-    <circle cx="120" cy="90" r="40"  fill="rgba(var(--accent), 0.6)"></circle>
-
-    <circle cx="120" cy="90" r="25" fill="rgb(var(--accent))" > </circle>
+    
   </svg>
 
   <h1
@@ -58,8 +48,15 @@
   </h1>
 
   <script>
-
-    const numberOfCircles = [1, 2, 3, 4, 5, 6, 7];
+    // Array to hold the circle data (cx, cy, radius, and fill)
+    const circlesData = [
+      { cx: 120, cy: 90, r: 100, fill: "rgba(var(--accent), 0.4)" },
+      { cx: 120, cy: 90, r: 85, fill: "rgba(var(--accent), 0.2)" },
+      { cx: 120, cy: 90, r: 70, fill: "rgba(var(--accent), 0.4)" },
+      { cx: 120, cy: 90, r: 55, fill: "rgba(var(--accent), 0.5)" },
+      { cx: 120, cy: 90, r: 40, fill: "rgba(var(--accent), 0.6)" },
+      { cx: 120, cy: 90, r: 25, fill: "rgba(var(--accent), 0.9)" },
+    ];
 
     const break5 = 50;
     const break6 = 60;
@@ -70,20 +67,40 @@
     const builders = document.getElementById("builders") as HTMLElement;
     const fame = document.getElementById("fame") as HTMLElement;
 
-    elementScroll?.addEventListener("scroll", (el: Event) => {
+    // Get the SVG element
+    const svg = document.getElementById("svgEl") as HTMLElement
 
-      const target = el.target as HTMLElement;
-      const scrollableHeight = target.scrollHeight - window.outerHeight;
-      const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
+    // Iterate over the circle data and create each circle programmatically
+    circlesData.forEach((data: any) => {
+      // Create a new circle element using the SVG namespace
+      const circle = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "circle"
+      );
 
-      if (scrollPercentage > break5 && scrollPercentage <= break6) {
-        fame.style.top = "-100%";
-        builders.style.left = "-100%";
-      } else if (scrollPercentage > break6 && scrollPercentage <= break7) {
-        fame.style.top = "0";
-        builders.style.left = "0";
-      }
+      // Set the attributes for the circle
+      circle.setAttribute("cx", data.cx);
+      circle.setAttribute("cy", data.cy);
+      circle.setAttribute("r", data.r);
+      circle.setAttribute("fill", data.fill);
+
+      // Append the circle to the SVG element
+      svg.appendChild(circle);
     });
+
+    // elementScroll?.addEventListener("scroll", (el: Event) => {
+    //   const target = el.target as HTMLElement;
+    //   const scrollableHeight = target.scrollHeight - window.outerHeight;
+    //   const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
+
+    //   if (scrollPercentage > break5 && scrollPercentage <= break6) {
+    //     fame.style.top = "-100%";
+    //     builders.style.left = "-100%";
+    //   } else if (scrollPercentage > break6 && scrollPercentage <= break7) {
+    //     fame.style.top = "0";
+    //     builders.style.left = "0";
+    //   }
+    // });
   </script>
 
   <!--  -->

@@ -132,7 +132,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
     const para2 = document.getElementById("para2") as HTMLElement;
     const para3 = document.getElementById("para3") as HTMLElement;
     const arrow = document.getElementById("arrow") as HTMLElement;
-    const circleSvg = document.getElementById("circleSvg") as HTMLElement;
+    const svgCircles = document.getElementById("svg-circles") as HTMLElement;
     const mainWindow = document.getElementById("main-window") as HTMLElement;
 
     const isMobile = window.matchMedia("(max-width: 639px)").matches;
@@ -280,8 +280,8 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
           arrow.style.top = "-110%";
           para3.style.top = "-110%";
 
-          circleSvg.style.opacity = "0";
-          circleSvg.style.top = "-140dvh";
+          svgCircles.style.opacity = "0";
+          svgCircles.style.top = "-140dvh";
 
 
         } else if (isDesktop) {
@@ -300,8 +300,8 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
           arrow.style.top = "-270%";
           mainTitle.style.top = "200%";
 
-          circleSvg.style.opacity = "1";
-          circleSvg.style.top = "0";
+          svgCircles.style.opacity = "1";
+          svgCircles.style.top = "0";
 
 
         }
