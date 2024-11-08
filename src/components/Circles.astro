@@ -85,21 +85,39 @@
     const builders = document.getElementById("builders") as HTMLElement;
     const fame = document.getElementById("fame") as HTMLElement;
     const circles = document.querySelectorAll("#svg-circles circle");
-    const circle = circles[0]
 
 
-    function animatePos(x: string, y: string) {
+
+    function animatePos(
+      circle: SVGElement,
+      targetCx: number,
+      targetCy: number,
+      duration: number = 500
+    ) {
+      const startTime = performance.now();
+      const initialCx = parseFloat(circle.getAttribute("cx") || "0");
+      const initialCy = parseFloat(circle.getAttribute("cy") || "0");
+      const deltaCx = targetCx - initialCx;
+      const deltaCy = targetCy - initialCy;
 
       function animate(time: number) {
-      
-        console.log("animate", time)
-        circle.setAttribute("cx", x)
-        circle.setAttribute("cy", y)
-        console.log("hiiiii")
+        const elapsed = time - startTime;
+
+        const progress = Math.min(elapsed / duration, 1);
+
+        const newCx = initialCx + deltaCx * progress;
+        const newCy = initialCy + deltaCy * progress;
+
+        circle.setAttribute("cx", newCx.toString());
+        circle.setAttribute("cy", newCy.toString());
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
       }
 
-      requestAnimationFrame(animate)
-    }    
+      requestAnimationFrame(animate);
+    }
 
     elementScroll?.addEventListener("scroll", (el: Event) => {
       const target = el.target as HTMLElement;
@@ -109,15 +127,13 @@
       if (scrollPercentage > break5 && scrollPercentage <= break6) {
         fame.style.top = "-100%";
         builders.style.left = "-100%";
-
+            circles.forEach((circle: any, index) => animatePos(circle, circlesData[index].cx, circlesData[index].cy));
       } else if (scrollPercentage > break6 && scrollPercentage <= break7) {
         fame.style.top = "0";
         builders.style.left = "0";
 
         if (scrollPercentage > 67) {
-          setTimeout(() => {
-            animatePos(120, 90)
-          }, 1000);
+            circles.forEach((circle: any) => animatePos(circle, 120, 90));
         }
       } else if (scrollPercentage > break7 && scrollPercentage <= break8) {
       }
