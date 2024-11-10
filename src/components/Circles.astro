@@ -85,13 +85,16 @@
       circle: SVGElement,
       targetCx: number,
       targetCy: number,
+      targetR: number,
       duration: number = 500
     ) {
       const startTime = performance.now();
       const initialCx = parseFloat(circle.getAttribute("cx") || "0");
       const initialCy = parseFloat(circle.getAttribute("cy") || "0");
+      const initialR = parseFloat(circle.getAttribute("r") || "0");
       const deltaCx = targetCx - initialCx;
       const deltaCy = targetCy - initialCy;
+      const deltaR = targetR - initialR;
 
       function animate(time: number) {
         const elapsed = time - startTime;
@@ -100,9 +103,11 @@
 
         const newCx = initialCx + deltaCx * progress;
         const newCy = initialCy + deltaCy * progress;
+        const newR = initialR + deltaR * progress;
 
         circle.setAttribute("cx", newCx.toString());
         circle.setAttribute("cy", newCy.toString());
+        circle.setAttribute("r", newR.toString());
 
         if (progress < 1) {
           requestAnimationFrame(animate);
@@ -121,16 +126,25 @@
         fame.style.top = "-100%";
         builders.style.left = "-100%";
         circles.forEach((circle: any, index) =>
-          animatePos(circle, circlesData[index].cx, circlesData[index].cy)
+          animatePos(
+            circle,
+            circlesData[index].cx,
+            circlesData[index].cy,
+            circlesData[index].r
+          )
         );
       } else if (scrollPercentage > break6 && scrollPercentage <= break7) {
         fame.style.top = "0";
         builders.style.left = "0";
 
         setTimeout(() => {
-          circles.forEach((circle: any) => animatePos(circle, 120, 90));
+          circles.forEach((circle: any, index) =>
+            animatePos(circle, 120, 90, circlesData[index].r)
+          );
         }, 1000);
+
       } else if (scrollPercentage > break7 && scrollPercentage <= break8) {
+        circles.forEach((circle: any) => animatePos(circle, 120, 90, 25));
       }
     });
   </script>
