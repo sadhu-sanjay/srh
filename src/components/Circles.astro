@@ -44,18 +44,18 @@
   <script>
     // Array to hold the circle data (cx, cy, radius, and fill)
     const circlesData = [
-      { cx: 120, cy: 90, cxN: 200 ,cyN: 30, r: 100, fill: "rgba(var(--accent), 0.4)" },
-      { cx: 100, cy: 90, cxN: screen.width/4 * 2,cyN: screen.height/2 , r: 85, fill: "rgba(var(--accent), 0.2)" },
-      { cx: 120, cy: 80, cxN: screen.width/4 * 3,cyN: screen.height/3 * 2, r: 70, fill: "rgba(var(--accent), 0.4)" },
-      { cx: 80, cy: 80,  cxN: screen.width/4 * 3,cyN: screen.height, r: 55, fill: "rgba(var(--accent), 0.5)" },
-      // { cx: 130, cy: 100,cxN: 20,cyN: 20, r: 40, fill: "rgba(var(--accent), 0.2)" },
-      // { cx: 130, cy: 80, cxN: 20,cyN: 20, r: 25, fill: "rgba(var(--accent), 0.9)" },
-      // { cx: 130, cy: 80, cxN: 30,cyN: 20, r: 25, fill: "rgba(var(--accent), 0.9)" },
-      // { cx: 130, cy: 80, cxN: 30,cyN: 20, r: 25, fill: "rgba(var(--accent), 0.9)" },
-      // { cx: 130, cy: 80, cxN: 30,cyN: 30, r: 25, fill: "rgba(var(--accent), 0.9)" },
-      // { cx: 130, cy: 80, cxN: 40,cyN: 30, r: 25, fill: "rgba(var(--accent), 0.9)" },
-      // { cx: 130, cy: 80, cxN: 40,cyN: 30, r: 25, fill: "rgba(var(--accent), 0.9)" },
-      // { cx: 130, cy: 80, cxN: 40,cyN: 30, r: 25, fill: "rgba(var(--accent), 0.9)" },
+      { cx: 120, cy: 90, cxN: 0, cyN: 130, r: 100, fill: "rgba(var(--accent), 0.4)" },
+      { cx: 100, cy: 90, cxN: 60 ,cyN: 130 , r: 85, fill: "rgba(var(--accent), 0.2)" },
+      { cx: 120, cy: 80, cxN: 180 ,cyN: 130 , r: 70, fill: "rgba(var(--accent), 0.4)" },
+      { cx: 80, cy: 80,  cxN: 120 ,cyN: 130 ,r: 55, fill: "rgba(var(--accent), 0.5)" },
+      { cx: 130, cy: 100,cxN: 180,cyN: 70, r: 40, fill: "rgba(var(--accent), 0.2)" },
+      { cx: 130, cy: 80, cxN: 120,cyN: 70, r: 25, fill: "rgba(var(--accent), 0.9)" },
+      { cx: 130, cy: 80, cxN: 0,cyN: 10, r: 25, fill: "rgba(var(--accent), 0.9)" },
+      { cx: 130, cy: 80, cxN: 60,cyN: 10, r: 25, fill: "rgba(var(--accent), 0.9)" },
+      { cx: 130, cy: 80, cxN: 120,cyN: 10, r: 25, fill: "rgba(var(--accent), 0.9)" },
+      { cx: 130, cy: 80, cxN: 180,cyN: 10, r: 25, fill: "rgba(var(--accent), 0.9)" },
+      { cx: 130, cy: 80, cxN: 0,cyN: 70, r: 25, fill: "rgba(var(--accent), 0.9)" },
+      { cx: 130, cy: 80, cxN: 60,cyN: 70, r: 25, fill: "rgba(var(--accent), 0.9)" },
     ];
 
     const break5 = 50;
@@ -155,7 +155,7 @@
       } else if (scrollPercentage > break8 && scrollPercentage <= break9) {
         console.log("Cirle", scrollPercentage)
 
-        circles.forEach((circle: any, index: number) => animatePos(circle, circlesData[index].cxN, circlesData[index].cyN, 30));
+        circles.forEach((circle: any, index: number) => animatePos(circle, circlesData[index].cxN, circlesData[index].cyN, 25));
 
       }
     });
