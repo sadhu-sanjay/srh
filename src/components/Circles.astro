@@ -44,18 +44,25 @@
   <script>
     // Array to hold the circle data (cx, cy, radius, and fill)
     const circlesData = [
-      { cx: 120, cy: 90, r: 100, fill: "rgba(var(--accent), 0.4)" },
-      { cx: 100, cy: 90, r: 85, fill: "rgba(var(--accent), 0.2)" },
-      { cx: 120, cy: 80, r: 70, fill: "rgba(var(--accent), 0.4)" },
-      { cx: 80, cy: 80, r: 55, fill: "rgba(var(--accent), 0.5)" },
-      { cx: 130, cy: 100, r: 40, fill: "rgba(var(--accent), 0.2)" },
-      { cx: 130, cy: 80, r: 25, fill: "rgba(var(--accent), 0.9)" },
+      { cx: 120, cy: 90, cxN: 200 ,cyN: 30, r: 100, fill: "rgba(var(--accent), 0.4)" },
+      { cx: 100, cy: 90, cxN: screen.width/4 * 2,cyN: screen.height/2 , r: 85, fill: "rgba(var(--accent), 0.2)" },
+      { cx: 120, cy: 80, cxN: screen.width/4 * 3,cyN: screen.height/3 * 2, r: 70, fill: "rgba(var(--accent), 0.4)" },
+      { cx: 80, cy: 80,  cxN: screen.width/4 * 3,cyN: screen.height, r: 55, fill: "rgba(var(--accent), 0.5)" },
+      // { cx: 130, cy: 100,cxN: 20,cyN: 20, r: 40, fill: "rgba(var(--accent), 0.2)" },
+      // { cx: 130, cy: 80, cxN: 20,cyN: 20, r: 25, fill: "rgba(var(--accent), 0.9)" },
+      // { cx: 130, cy: 80, cxN: 30,cyN: 20, r: 25, fill: "rgba(var(--accent), 0.9)" },
+      // { cx: 130, cy: 80, cxN: 30,cyN: 20, r: 25, fill: "rgba(var(--accent), 0.9)" },
+      // { cx: 130, cy: 80, cxN: 30,cyN: 30, r: 25, fill: "rgba(var(--accent), 0.9)" },
+      // { cx: 130, cy: 80, cxN: 40,cyN: 30, r: 25, fill: "rgba(var(--accent), 0.9)" },
+      // { cx: 130, cy: 80, cxN: 40,cyN: 30, r: 25, fill: "rgba(var(--accent), 0.9)" },
+      // { cx: 130, cy: 80, cxN: 40,cyN: 30, r: 25, fill: "rgba(var(--accent), 0.9)" },
     ];
 
     const break5 = 50;
     const break6 = 60;
     const break7 = 70;
     const break8 = 80;
+    const break9 = 90;
 
     const svg = document.getElementById("svgEl") as HTMLElement;
     // Iterate over the circle data and create each circle programmatically
@@ -78,7 +85,7 @@
 
     const elementScroll = document.getElementById("main-window");
     const builders = document.getElementById("builders") as HTMLElement;
-    const fame = document.getElementById("fame") as HTMLElement;
+    const textFame = document.getElementById("fame") as HTMLElement;
     const circles = document.querySelectorAll("#svg-circles circle");
 
     function animatePos(
@@ -123,7 +130,7 @@
       const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
 
       if (scrollPercentage > break5 && scrollPercentage <= break6) {
-        fame.style.top = "-100%";
+        textFame.style.top = "-100%";
         builders.style.left = "-100%";
         circles.forEach((circle: any, index) =>
           animatePos(
@@ -134,22 +141,21 @@
           )
         );
       } else if (scrollPercentage > break6 && scrollPercentage <= break7) {
-        fame.style.top = "0";
-        builders.style.left = "0";
-        setTimeout(
-          () =>
-            circles.forEach((circle: any, index) =>
-              animatePos(circle, 120, 90, circlesData[index].r)
-            ),
-          1000
+        textFame.style.top = "0%";
+        builders.style.left = "0%";
+
+        circles.forEach((circle: any, index) =>
+          animatePos(circle, 120, 90, circlesData[index].r)
         );
-
       } else if (scrollPercentage > break7 && scrollPercentage <= break8) {
-
-        fame.style.top = "-100%";
+        textFame.style.top = "-100%";
         builders.style.left = "-100%";
 
         circles.forEach((circle: any) => animatePos(circle, 120, 90, 25));
+      } else if (scrollPercentage > break8 && scrollPercentage <= break9) {
+        console.log("Cirle", scrollPercentage)
+
+        circles.forEach((circle: any, index: number) => animatePos(circle, circlesData[index].cxN, circlesData[index].cyN, 30));
 
       }
     });
