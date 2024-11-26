@@ -23,7 +23,7 @@
 
   <h1
     id="fame"
-    class="absolute -top-full left-1/2 w-[100dvw] -translate-x-1/2 text-[35dvw] font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
+    class="absolute -top-full left-1/2 w-[100dvw] -translate-x-1/2 text-[35dvw] font-black leading-none text-secondary-accent transition-all duration-1000"
   >
     F<span class="relative inline-block"
       >A<div
@@ -41,21 +41,45 @@
     >ME
   </h1>
 
+  <div
+    class="absolute transition-all duration-[1600ms] left-[200%] top-1/4 flex w-[100dvw] -translate-x-1/2 flex-col bg-red-500"
+    id="strategy-text"
+  >
+    <h1
+      class="text-7xl font-black leading-none text-secondary-accent transition-all bg-pink-800 delay-1000 duration-1000"
+    >
+      INTEGRATED
+    </h1>
+    <div
+      class="text-[12dvw] font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
+    >
+      STRATEGY
+    </div>
+    <div class="leading-2 w-5/6 text-xl font-normal text-secondary-accent">
+      We do all planning with strategy, creative<br />
+      and media in the room together because <br />
+      the assembly line approach doesn't work <br />
+      in this fragmented, rapid changing <br />
+      media landscape(1).
+    </div>
+  </div>
+
   <script>
     // Array to hold the circle data (cx, cy, radius, and fill)
-    const circlesData = [
-      { cx: -20, cy:-40, cx1: 120, cy1: 130,cx2: 30, cy2: 0, r: 25,   fill: "rgba(0,250,250, 0.9)",      fill1: "rgba(0,250,250, 0.9)",    },
-      { cx: -20, cy:-40, cx1: 180, cy1: 130,cx2: 30, cy2: 15, r: 25,  fill: "rgba(0,250, 250 , 0.9)",    fill1: "rgba(0,250, 250 , 0.9)",  },
-      { cx: -20, cy:-40, cx1: 120, cy1: 10, cx2: 30, cy2: 30, r: 25,  fill: "rgba(0, 250, 0, 0.9)",      fill1: "rgba(0, 250, 0, 0.9)",    },
-      { cx: -20, cy:-40, cx1: 180, cy1: 10, cx2: 30, cy2: 45, r: 25,  fill: "rgba( 0, 250, 0  , 0.9)",   fill1: "rgba( 0, 250, 0  , 0.9)", },
-      { cx: -20, cy:-40, cx1: 0,   cy1: 70, cx2: 30, cy2: 60, r: 25,  fill: "rgba( 250,250,0, 0.9)",     fill1: "rgba( 250,250,0, 0.9)",   },
-      { cx: -20, cy:-40, cx1: 60,  cy1: 70, cx2: 30, cy2: 75, r: 25,  fill: "rgba( var(--accent), 0.3)", fill1: "rgba(var(--accent), 0.9)", },
-      { cx: 120, cy: 90, cx1: 0,   cy1: 130,cx2: 30, cy2: 90, r: 100, fill: "rgba( var(--accent), 0.4)", fill1: "rgba(var(--accent), 0.9)", },
-      { cx: 100, cy: 90, cx1: 60 , cy1: 130,cx2: 30, cy2: 105, r: 85, fill: "rgba( var(--accent), 0.5)", fill1: "rgba(var(--accent), 0.9)", },
-      { cx: 120, cy: 80, cx1: 0 ,  cy1: 10, cx2: 30, cy2: 120, r: 70, fill: "rgba(var(--accent), 0.4)",  fill1: "rgba(var(--accent), 0.9)", },
-      { cx: 80,  cy: 80, cx1: 60 , cy1: 10, cx2: 30, cy2: 135, r: 55, fill: "rgba(var(--accent), 0.4)",  fill1: "rgba(var(--accent), 0.9)", },
-      { cx: 130, cy: 100,cx1: 180, cy1: 70, cx2: 30, cy2: 150, r: 40, fill: "rgba(var(--accent), 0.4)",  fill1: "rgba(var(--accent), 0.9)", },
-      { cx: 130, cy: 80, cx1: 120, cy1: 70, cx2: 30, cy2: 165, r: 25, fill: "rgba(var(--accent), 0.4)",  fill1: "rgba(var(--accent), 0.9)", },
+
+    const circlesData = [ 
+      { cx: -20, cy: -40, cx1: 120, cy1: 130, cx2: 20, cy2: 0, r: 25, fill: "rgba(0,250,250, 0.9)", fill1: "rgba(0,250,250, 0.9)", },
+      { cx: -20, cy: -40, cx1: 180, cy1: 130, cx2: 20, cy2: 15, r: 25, fill: "rgba(0,250, 250 , 0.9)", fill1: "rgba(0,250, 250 , 0.9)", },
+      { cx: -20, cy: -40, cx1: 120, cy1: 10, cx2: 20, cy2: 30, r: 25, fill: "rgba(0, 250, 0, 0.9)", fill1: "rgba(0, 250, 0, 0.9)", },
+      { cx: -20, cy: -40, cx1: 180, cy1: 10, cx2: 20, cy2: 45, r: 25, fill: "rgba( 0, 250, 0  , 0.9)", fill1: "rgba( 0, 250, 0  , 0.9)", },
+      { cx: -20, cy: -40, cx1: 0, cy1: 70, cx2: 20, cy2: 60, r: 25, fill: "rgba( 250,250,0, 0.9)", fill1: "rgba( 250,250,0, 0.9)", },
+      { cx: -20, cy: -40, cx1: 60, cy1: 70, cx2: 20, cy2: 75, r: 25, fill: "rgba( var(--accent), 0.3)", fill1: "rgba(var(--accent), 0.9)", },
+      { cx: 120, cy: 90, cx1: 0, cy1: 130, cx2: 20, cy2: 90, r: 100, fill: "rgba( var(--accent), 0.4)", fill1: "rgba(var(--accent), 0.9)", },
+      { cx: 100, cy: 90, cx1: 60, cy1: 130, cx2: 20, cy2: 105, r: 85, fill: "rgba( var(--accent), 0.5)", fill1: "rgba(var(--accent), 0.9)", },
+      { cx: 120, cy: 80, cx1: 0, cy1: 10, cx2: 20, cy2: 120, r: 70, fill: "rgba(var(--accent), 0.4)", fill1: "rgba(var(--accent), 0.9)", },
+      { cx: 80, cy: 80, cx1: 60, cy1: 10, cx2: 20, cy2: 135, r: 55, fill: "rgba(var(--accent), 0.4)", fill1: "rgba(var(--accent), 0.9)", },
+      { cx: 130, cy: 100, cx1: 180, cy1: 70, cx2: 20, cy2: 150, r: 40, fill: "rgba(var(--accent), 0.4)", fill1: "rgba(var(--accent), 0.9)", },
+      { cx: 130, cy: 80, cx1: 120, cy1: 70, cx2: 20, cy2: 165, r: 25, fill: "rgba(var(--accent), 0.4)", fill1: "rgba(var(--accent), 0.9)", },
     ];
 
     const break5 = 35;
@@ -89,6 +113,9 @@
     const elementScroll = document.getElementById("main-window");
     const builders = document.getElementById("builders") as HTMLElement;
     const textFame = document.getElementById("fame") as HTMLElement;
+    const strategyText = document.getElementById(
+      "strategy-text"
+    ) as HTMLElement;
     const circles = document.querySelectorAll("#svg-circles circle");
 
     function animatePos(
@@ -99,7 +126,6 @@
       fill?: string | undefined,
       duration: number = 700
     ) {
-
       const startTime = performance.now();
       const initialCx = parseFloat(circle.getAttribute("cx") || "0");
       const initialCy = parseFloat(circle.getAttribute("cy") || "0");
@@ -122,7 +148,7 @@
         circle.setAttribute("r", newR.toString());
 
         if (fill) {
-          circle.setAttribute("fill", fill)
+          circle.setAttribute("fill", fill);
         }
 
         if (progress < 1) {
@@ -160,15 +186,31 @@
         textFame.style.top = "-100%";
         builders.style.left = "-100%";
 
-        circles.forEach((circle: any, index: number) => animatePos(circle, 120, 90, 25, circlesData[index].fill ));
+        circles.forEach((circle: any, index: number) =>
+          animatePos(circle, 120, 90, 25, circlesData[index].fill)
+        );
       } else if (scrollPercentage > break8 && scrollPercentage <= break9) {
-        console.log("Cirle", scrollPercentage)
 
-        circles.forEach((circle: any, index: number) => animatePos(circle, circlesData[index].cx1, circlesData[index].cy1, 25, circlesData[index].fill1));
+        circles.forEach((circle: any, index: number) =>
+          animatePos(
+            circle,
+            circlesData[index].cx1,
+            circlesData[index].cy1,
+            25,
+            circlesData[index].fill1
+          )
+
+        );
+
+        strategyText.style.left = "150%"
 
       } else if (scrollPercentage > break9 && scrollPercentage <= break10) {
- 
-        circles.forEach((circle: any, index: number) => animatePos(circle, circlesData[index].cx2, circlesData[index].cy2, 6));
+
+        circles.forEach((circle: any, index: number) =>
+          animatePos(circle, circlesData[index].cx2, circlesData[index].cy2, 6)
+        );
+
+        strategyText.style.left = "66%"
       }
     });
   </script>
