@@ -126,6 +126,9 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
     const break8 = 56;
     const break9 = 63;
     const break10 = 70;
+    const break11 = 80;
+    const break12 = 90;
+    const break13 = 100;
 
     const logo = document.getElementById("logo") as HTMLImageElement;
     const mainTitle = document.getElementById("mainTitle") as HTMLElement;
@@ -327,6 +330,10 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         iExpendable.style.transform = "translateX(400px) scaleY(40) "
         iExpendable.style.width = "16rem"
 
+      }else if (scrolledPercentage > break10 && scrolledPercentage <= break11) {
+
+          iExpendable.style.width = "5.3rem"
+          iExpendable.style.transform = "translateX(70px) scaleY(40) "
       }
 
     });
