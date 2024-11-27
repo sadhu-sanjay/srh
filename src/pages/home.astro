@@ -1,6 +1,7 @@
 ---
 const iWidth = "1.8rem";
 import Circles from "../components/Circles.astro";
+import Settings from "../components/Settings.astro";
 import ThreeArrow from "../Icons/ThreeArrow.astro";
 ---
 
@@ -46,7 +47,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
 <main
   id="main-window"
-  class="relative h-[100dvh] w-[100dvw] overflow-scroll bg-white"
+  class="relative h-[100dvh] w-[100dvw] overflow-scroll bg-white "
 >
   <img
     id="logo"
@@ -111,11 +112,12 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
     </div>
 
     <Circles />
+    <Settings />
 
-    <!-- <FameText /> -->
   </div>
 
   <script>
+
     const break1 = 7;
     const break2 = 14;
     const break3 = 21;
@@ -164,6 +166,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
       console.log("%%", scrolledPercentage);
 
       if (scrolledPercentage <= break1) {
+
         logo.style.left = "50%";
         logo.style.top = "50%";
         logo.style.transform = "translate(-50%,-50%)";
@@ -176,11 +179,15 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         para2.style.top = "200%";
         para3.style.top = "200%";
         arrow.style.top = "200%";
+
+
       } else if (
         // STEP 1
         scrolledPercentage > break1 &&
         scrolledPercentage <= break2
       ) {
+
+
         logo.style.transform = "translate(0,0)";
 
         if (isMobile) {
