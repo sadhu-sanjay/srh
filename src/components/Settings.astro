@@ -4,15 +4,15 @@
 >
 
   <svg
-    height="800px"
-    width="800px"
+    height="100dvh"
+    width="100dvh"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 512 512"
     xml:space="preserve"
     id="settings-icon1"
-    class="absolute top-0 animate-spin transition-all duration-1000"
+    class="absolute top-0 animate-spin transition-all duration-[2000ms]"
   >
     <path
       fill="#f52a99"
@@ -21,15 +21,15 @@
   </svg>
 
   <svg
-    height="800px"
-    width="800px"
+    height="70dvh"
+    width="70dvh"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 512 512"
     xml:space="preserve"
     id="settings-icon2"
-    class="absolute right-0 top-0 animate-spin transition-all duration-1000"
+    class="absolute right-0 top-0 animate-spin transition-all duration-[2000ms]"
   >
     <path
       fill="#f52a99"
@@ -86,14 +86,17 @@
       settingsIcon1!.style.top = "0";
       settingsIcon2!.style.top = "0";
       //  svgElementIcon1?.style.top = "100dvh"
+
     } else if (scrollPercentage > break10 && scrollPercentage <= break11) {
 
       settingsIcon1!.style.top = "150dvh";
       settingsIcon2!.style.top = "90dvh";
+
     } else if (scrollPercentage > break11 && scrollPercentage <= break12) {
 
       settingsIcon1!.style.top = "190dvh";
       settingsIcon2!.style.top = "150dvh";
+
     }
   });
 </script>
