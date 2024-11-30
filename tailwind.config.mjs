@@ -13,11 +13,19 @@ export default {
 				primaryText: "33dvw"
 			},
 			animation: {
-				"spin": "spin 60s linear infinite"
+				"spin": "spin 60s linear infinite",
+				"spinBack": "spinBack 60s linear infinite"
 			},
 			keyframes: {
 				"spin": {
-					transform: "rotate(360deg)"
+					to: {
+						transform: "rotate(360deg)"
+					}
+				},
+				"spinBack": {
+					to: {
+						transform: "rotate(-360deg)"
+					}
 				}
 			}
 		},

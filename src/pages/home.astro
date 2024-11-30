@@ -7,7 +7,6 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 ---
 
 <style is:global>
-
   .i-width {
     width: 1.36rem;
   }
@@ -49,7 +48,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
 <main
   id="main-window"
-  class="relative h-[100dvh] w-[100dvw] overflow-scroll bg-white "
+  class="relative h-[100dvh] w-[100dvw] overflow-scroll bg-white"
 >
   <img
     id="logo"
@@ -60,10 +59,8 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
   <div
     id="spacer"
-    class="relative left-1/2 -top-[100dvh] h-[1600dvh] w-[120%] -translate-x-1/2 border-4 border-rose-800 bg-primary"
+    class="relative -top-[100dvh] left-1/2 h-[2000dvh] w-[120%] -translate-x-1/2 border-4 border-rose-800 bg-primary"
   >
-
-
     <Settings />
     <div
       id="mainTitle"
@@ -117,25 +114,12 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
     </div>
 
     <Circles />
-    <StrategyText/>
-
+    <StrategyText />
   </div>
 
   <script>
 
-    const break1 = 7;
-    const break2 = 14;
-    const break3 = 21;
-    const break4 = 28;
-    const break5 = 35;
-    const break6 = 42;
-    const break7 = 49;
-    const break8 = 56;
-    const break9 = 63;
-    const break10 = 70;
-    const break11 = 80;
-    const break12 = 90;
-    const break13 = 100;
+    import { break1, break2, break3, break4, break5, break6, break7, break8, break9, break10, break11, break12, break13, } from "../constants";
 
     const logo = document.getElementById("logo") as HTMLImageElement;
     const mainTitle = document.getElementById("mainTitle") as HTMLElement;
@@ -171,7 +155,6 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
       console.log("%%", scrolledPercentage);
 
       if (scrolledPercentage <= break1) {
-
         logo.style.left = "50%";
         logo.style.top = "50%";
         logo.style.transform = "translate(-50%,-50%)";
@@ -184,15 +167,11 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         para2.style.top = "200%";
         para3.style.top = "200%";
         arrow.style.top = "200%";
-
-
       } else if (
         // STEP 1
         scrolledPercentage > break1 &&
         scrolledPercentage <= break2
       ) {
-
-
         logo.style.transform = "translate(0,0)";
 
         if (isMobile) {
@@ -279,8 +258,6 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
           mainTitle.style.top = "60%";
           arrow.style.top = "96%";
           para3.style.top = "96%";
-
-
         } else if (isDesktop) {
           para1.style.top = "-30%";
           para2.style.top = "-55%";
@@ -301,8 +278,6 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
           svgCircles.style.opacity = "0";
           svgCircles.style.top = "-140dvh";
-
-
         } else if (isDesktop) {
           mainTitle.style.top = "75%";
           arrow.style.top = "-95%";
@@ -322,32 +297,26 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
           svgCircles.style.opacity = "1";
           svgCircles.style.top = "0";
 
-          iExpendable.style.transform = "translateX(0px) scaleY(40)"
+          iExpendable.style.transform = "translateX(0px) scaleY(40)";
         }
       } else if (scrolledPercentage > break7 && scrolledPercentage <= break8) {
         if (isMobile) {
         } else if (isLaptopLarge) {
-
-        iExpendable.style.transform = "translateX(70px) scaleY(40) "
+          iExpendable.style.transform = "translateX(70px) scaleY(40) ";
         }
+      } else if (scrolledPercentage > break8 && scrolledPercentage <= break9) {
+        iExpendable.style.width = "5.3rem";
+        iExpendable.style.transform = "translateX(70px) scaleY(40) ";
+      } else if (scrolledPercentage > break9 && scrolledPercentage <= break10) {
+        iExpendable.style.transform = "translateX(400px) scaleY(40) ";
+        iExpendable.style.width = "16rem";
+      } else if (
+        scrolledPercentage > break10 &&
+        scrolledPercentage <= break11
+      ) {
+        iExpendable.style.width = "5.3rem";
+        iExpendable.style.transform = "translateX(70px) scaleY(40)";
       }
-      else if (scrolledPercentage > break8 && scrolledPercentage <= break9) {
-
-          iExpendable.style.width = "5.3rem"
-          iExpendable.style.transform = "translateX(70px) scaleY(40) "
-
-      } 
-      else if (scrolledPercentage > break9 && scrolledPercentage <= break10) {
-
-        iExpendable.style.transform = "translateX(400px) scaleY(40) "
-        iExpendable.style.width = "16rem"
-
-      }else if (scrolledPercentage > break10 && scrolledPercentage <= break11) {
-
-        iExpendable.style.width = "5.3rem"
-        iExpendable.style.transform = "translateX(70px) scaleY(40)"
-      }
-
     });
   </script>
 </main>
