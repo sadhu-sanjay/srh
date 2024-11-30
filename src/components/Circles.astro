@@ -202,16 +202,19 @@
 
         );
 
-        strategyText.style.left = "150%"
-
       } else if (scrollPercentage > break9 && scrollPercentage <= break10) {
 
         circles.forEach((circle: any, index: number) =>
           animatePos(circle, circlesData[index].cx2, circlesData[index].cy2, 6)
         );
 
-        strategyText.style.left = "66%"
+
+      }else if (scrollPercentage > break11 && scrollPercentage <= break12) {
+
+        strategyText.style.top = "106%"
       }
     });
   </script>
 </div>
+
+
