@@ -34,12 +34,18 @@
     const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
 
     if (scrollPercentage < break9) {
-      strategyText.style.left = "100%";
+
+      strategyText.style.left = "160%";
+
     } else if (scrollPercentage > break9 && scrollPercentage <= break10) {
+
       strategyText.style.left = "66%";
-    } else if (scrollPercentage > break11 && scrollPercentage <= break12) {
+      strategyText.style.top = "25%";
+
+    } else if (scrollPercentage > break10)
+
       strategyText.style.top = "106%";
     }
 
-  });
+  );
 </script>

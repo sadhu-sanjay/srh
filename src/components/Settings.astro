@@ -82,17 +82,18 @@
     const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
 
     if (scrollPercentage > break4 && scrollPercentage < break10) {
+
       settingsIcon1!.style.top = "0";
       settingsIcon2!.style.top = "0";
       //  svgElementIcon1?.style.top = "100dvh"
     } else if (scrollPercentage > break10 && scrollPercentage <= break11) {
-      // console.log("SettingsIon1", settingsIcon1)
+
       settingsIcon1!.style.top = "150dvh";
       settingsIcon2!.style.top = "90dvh";
-      // console.log("Settings", settingsIcon1)
     } else if (scrollPercentage > break11 && scrollPercentage <= break12) {
 
-
+      settingsIcon1!.style.top = "190dvh";
+      settingsIcon2!.style.top = "150dvh";
     }
   });
 </script>
