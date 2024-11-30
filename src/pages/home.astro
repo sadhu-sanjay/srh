@@ -6,6 +6,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 ---
 
 <style is:global>
+
   .i-width {
     width: 1.36rem;
   }
@@ -58,8 +59,11 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
   <div
     id="spacer"
-    class="relative left-1/2 h-[1400dvh] w-[120%] -translate-x-1/2 border-4 border-rose-800 bg-primary"
+    class="relative left-1/2 -top-[100dvh] h-[1400dvh] w-[120%] -translate-x-1/2 border-4 border-rose-800 bg-primary"
   >
+
+
+    <Settings />
     <div
       id="mainTitle"
       class="sticky top-full w-full justify-between text-center text-accent transition-all duration-700"
@@ -112,7 +116,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
     </div>
 
     <Circles />
-    <Settings />
+
 
   </div>
 
@@ -339,8 +343,8 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
       }else if (scrolledPercentage > break10 && scrolledPercentage <= break11) {
 
-          iExpendable.style.width = "5.3rem"
-          iExpendable.style.transform = "translateX(70px) scaleY(40) "
+        iExpendable.style.width = "5.3rem"
+        iExpendable.style.transform = "translateX(70px) scaleY(40) "
       }
 
     });

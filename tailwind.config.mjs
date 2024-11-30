@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -10,7 +11,15 @@ export default {
 			},
 			fontSize: {
 				primaryText: "33dvw"
-			}	
+			},
+			animation: {
+				"spin": "spin 60s linear infinite"
+			},
+			keyframes: {
+				"spin": {
+					transform: "rotate(360deg)"
+				}
+			}
 		},
 	},
 	plugins: [],
