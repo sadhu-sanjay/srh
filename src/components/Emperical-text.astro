@@ -1,5 +1,5 @@
 <div
-  class="sticky opacity-0 left-1/2 -top-[10dvh] flex w-[100dvw] -translate-x-1/2 flex-col transition-all duration-[1600ms]"
+  class=" sticky left-full top-0 flex w-[100dvw] -translate-x-1/2 flex-col transition-all duration-[1600ms]"
   id="emperical-text"
 >
 
@@ -31,7 +31,7 @@
   import { break9, break10, break11, break12, break13 , break1, break2} from "../constants";
 
   const elementScroll = document.getElementById("main-window");
-  const empericalText = document.getElementById(
+  const empericalGroup = document.getElementById(
     "emperical-text"
   ) as HTMLElement;
 
@@ -43,14 +43,11 @@
     console.log("Sanjay Percentage", scrollPercentage)
     if (scrollPercentage < break1) {
 
-      empericalText.style.position = "absolute"
-      empericalText.style.opacity = "0"
+      // empericalGroup.style.transform = "translateY(-100%)"
 
-    } else if (scrollPercentage > break1 && scrollPercentage <= break2) {
+    } else if (scrollPercentage > break11 && scrollPercentage <= break12) {
 
-      empericalText.style.position = "sticky"
-      empericalText.style.opacity = "1"
-      empericalText.style.top = "0"
+      // empericalGroup.style.transform = "translateY(0)"
 
     }
   });
