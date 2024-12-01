@@ -1,6 +1,7 @@
 ---
 const iWidth = "1.8rem";
 import Circles from "../components/Circles.astro";
+import EmpericalText from "../components/Emperical-text.astro";
 import Settings from "../components/Settings.astro";
 import StrategyText from "../components/Strategy-text.astro";
 import ThreeArrow from "../Icons/ThreeArrow.astro";
@@ -61,6 +62,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
     id="spacer"
     class="relative -top-[100dvh] left-1/2 h-[2000dvh] w-[120%] -translate-x-1/2 border-4 border-rose-800 bg-primary"
   >
+    <EmpericalText />
     <Settings />
     <div
       id="mainTitle"
@@ -115,6 +117,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
     <Circles />
     <StrategyText />
+
   </div>
 
   <script>

@@ -1,0 +1,57 @@
+<div
+  class="sticky opacity-0 left-1/2 -top-[10dvh] flex w-[100dvw] -translate-x-1/2 flex-col transition-all duration-[1600ms]"
+  id="emperical-text"
+>
+
+  <h1
+    class="text-[12.5rem] font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
+  >
+    EMPERICAL
+  </h1>
+  <div class="relative left-[44%]">
+
+    <div
+      class="text-[9rem] font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
+    >
+      TOOLKIT
+    </div>
+
+    <div class="leading-2 w-5/6 text-xl font-normal text-secondary-accent">
+      We have tools that harness brand growth<br />
+      research & principles that most agencies in <br />
+      America aren't even paying attention to -<br />
+      like The Cogs, a brand health dashboard<br />
+      that measures what matters(1).
+    </div>
+
+  </div>
+</div>
+
+<script>
+  import { break9, break10, break11, break12, break13 , break1, break2} from "../constants";
+
+  const elementScroll = document.getElementById("main-window");
+  const empericalText = document.getElementById(
+    "emperical-text"
+  ) as HTMLElement;
+
+  elementScroll?.addEventListener("scroll", (el: Event) => {
+    const target = el.target as HTMLElement;
+    const scrollableHeight = target.scrollHeight - window.outerHeight;
+    const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
+
+    console.log("Sanjay Percentage", scrollPercentage)
+    if (scrollPercentage < break1) {
+
+      empericalText.style.position = "absolute"
+      empericalText.style.opacity = "0"
+
+    } else if (scrollPercentage > break1 && scrollPercentage <= break2) {
+
+      empericalText.style.position = "sticky"
+      empericalText.style.opacity = "1"
+      empericalText.style.top = "0"
+
+    }
+  });
+</script>
