@@ -1,5 +1,5 @@
 <div
-  class="sticky -translate-x-1/2 left-1/2 top-[100dvh] flex w-[100dvw] flex-col transition-all duration-[1600ms]"
+  class="absolute -translate-x-1/2 left-1/2 top-0 flex w-[100dvw] flex-col transition-all duration-[1600ms]"
   id="emperical-text"
 >
 
@@ -44,7 +44,7 @@
     console.log("Sanjay Percentage", scrollPercentage)
     if (scrollPercentage < break1) {
 
-      empericalGroup.style.transform = "translateY(-100%)"
+      empericalGroup.style.transform = "translateY(-100dvh)"
 
     } else if (scrollPercentage > break11 && scrollPercentage <= break12) {
 
