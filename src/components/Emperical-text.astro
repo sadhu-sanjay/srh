@@ -1,6 +1,6 @@
 <div
   class="absolute -translate-x-1/2 left-1/2 top-0 flex w-[100dvw] flex-col transition-all duration-[1600ms]"
-  id="emperical-text"
+  id="emperical-textGroup"
 >
 
   <h1
@@ -29,11 +29,11 @@
 </div>
 
 <script>
-  import { break9, break10, break11, break12, break13 , break1, break2} from "../constants";
+  import { break4, break3, break9, break10, break11, break12, break13 , break1, break2} from "../constants";
 
   const elementScroll = document.getElementById("main-window");
-  const empericalGroup = document.getElementById(
-    "emperical-text"
+  const empericalTextGroup = document.getElementById(
+    "emperical-textGroup"
   ) as HTMLElement;
 
   elementScroll?.addEventListener("scroll", (el: Event) => {
@@ -44,11 +44,11 @@
     console.log("Sanjay Percentage", scrollPercentage)
     if (scrollPercentage < break1) {
 
-      empericalGroup.style.transform = "translateY(-100dvh)"
+      // empericalTextGroup.style.top = "0"
 
-    } else if (scrollPercentage > break11 && scrollPercentage <= break12) {
+    } else if (scrollPercentage > break3 && scrollPercentage <= break4) {
 
-      // empericalGroup.style.transform = "translateY(0)"
+      empericalTextGroup.style.top = "100dvh"
 
     }
   });
