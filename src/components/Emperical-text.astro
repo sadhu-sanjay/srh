@@ -1,5 +1,5 @@
 <div
-  class=" sticky  items-center top-[15%] flex  flex-col transition-all duration-[1600ms]"
+  class=" sticky  items-center top-full flex  flex-col transition-all duration-[1600ms]"
   id="emperical-textGroup"
 >
   <h1
@@ -40,14 +40,17 @@
     const scrollableHeight = target.scrollHeight - window.outerHeight;
     const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
 
-    if (scrollPercentage < break1) {
+    if (scrollPercentage < break12) {
 
-      // empericalTextGroup.style.top = "0"
+      empericalTextGroup.style.top = "100%"
 
-    } else if (scrollPercentage > break3 && scrollPercentage <= break4) {
+    } else if (scrollPercentage > break12 && scrollPercentage <= break13) {
 
-      empericalTextGroup.style.left = "50%"
+      empericalTextGroup.style.top = "15%"
 
+    }else {
+
+      empericalTextGroup.style.top = "100%"
     }
   });
 </script>
