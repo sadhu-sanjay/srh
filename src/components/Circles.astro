@@ -67,7 +67,7 @@
   <script>
     // Array to hold the circle data (cx, cy, radius, and fill)
 
-    import {break5, break6, break7, break8, break9, break10, break11, break12, circlesData } from "../constants"
+import {break5, break6, break7, break8, break9, break10, break11, break12, circlesData } from "../constants"
 
     const svg = document.getElementById("svgEl") as HTMLElement;
     const svgCirclesDiv = document.getElementById("svg-circles") as HTMLElement
@@ -87,7 +87,6 @@
 
       // Append the circle to the SVG element
       svg.appendChild(circle);
-
       
     });
 
@@ -161,7 +160,7 @@
         builders.style.left = "0%";
 
         circles.forEach((circle: any, index) =>
-          animatePos(circle, 120, 90, circlesData[index].r)
+          animatePos(circle, 120, 90, circlesData[index].r, "", 2200)
         );
       } else if (scrollPercentage > break7 && scrollPercentage <= break8) {
         textFame.style.top = "-100%";
@@ -194,6 +193,13 @@
         circles.forEach((circle: any, index: number) =>
           animatePos(circle, circlesData[index].cx2, circlesData[index].cy2, 6)
         );
+
+      } else if (scrollPercentage > break10 && scrollPercentage <= break11) {
+
+        circles.forEach((circle: any, index: number) =>
+          animatePos(circle, circlesData[index].cx2, 150 , 6, "", 1200)
+        );
+
       }
 
     });
