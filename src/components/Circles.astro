@@ -1,5 +1,5 @@
 <div
-  class="sticky top-[100dvh] h-[140dvh] w-full opacity-0 transition-all delay-700 duration-1000"
+  class="sticky overflow-visible top-[100dvh] h-[140dvh] w-full opacity-0 transition-all delay-700 duration-1000"
   id="svg-circles"
 >
   <svg
@@ -194,17 +194,15 @@ import {break5, break6, break7, break8, break9, break10, break11, break12, circl
         circles.forEach((circle: any, index: number) =>
           animatePos(circle, circlesData[index].cx2, circlesData[index].cy2, 6)
         );
-
+        
         svgCirclesDiv.style.top = "0"
 
       } else if (scrollPercentage > break10 && scrollPercentage <= break11) {
 
         svgCirclesDiv.style.top = "100dvh"
 
-      }else {
-
-        svgCirclesDiv.style.top = "0"
       }
+
 
     });
   </script>
