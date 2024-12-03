@@ -70,7 +70,6 @@
 import {break5, break6, break7, break8, break9, break10, break11, break12, circlesData } from "../constants"
 
     const svg = document.getElementById("svgEl") as HTMLElement;
-    const svgCirclesDiv = document.getElementById("svg-circles") as HTMLElement
     // Iterate over the circle data and create each circle programmatically
     circlesData.forEach((data: any) => {
       // Create a new circle element using the SVG namespace
@@ -195,11 +194,12 @@ import {break5, break6, break7, break8, break9, break10, break11, break12, circl
           animatePos(circle, circlesData[index].cx2, circlesData[index].cy2, 6)
         );
         
-        svgCirclesDiv.style.top = "0"
 
       } else if (scrollPercentage > break10 && scrollPercentage <= break11) {
 
-        svgCirclesDiv.style.top = "100dvh"
+        circles.forEach((circle: any, index: number) =>
+          animatePos(circle, circlesData[index].cx2 - 70, circlesData[index].cy2, 6)
+        );
 
       }
 
