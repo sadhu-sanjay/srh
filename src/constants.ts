@@ -1,5 +1,5 @@
 
-const multipler = 6
+const multipler = 7
 
 export const break1 = multipler * 1
 export const break2 = multipler * 2
