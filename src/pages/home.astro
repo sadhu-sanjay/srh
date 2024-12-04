@@ -319,6 +319,21 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
       ) {
         iExpendable.style.width = "5.3rem";
         iExpendable.style.transform = "translateX(70px) scaleY(40)";
+      
+      } else if (
+        scrolledPercentage > break11 &&
+        scrolledPercentage <= break12
+      ) {
+
+        iExpendable.style.transform = "translateX(70px) scaleY(35)";
+
+      } else if (
+        scrolledPercentage > break12 &&
+        scrolledPercentage <= break13
+      ) {
+
+        iExpendable.style.transform = "translateX(70px) scaleY(35)";
+
       }
     });
   </script>

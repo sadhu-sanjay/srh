@@ -159,7 +159,7 @@ import {break5, break6, break7, break8, break9, break10, break11, break12, circl
         builders.style.left = "0%";
 
         circles.forEach((circle: any, index) =>
-          animatePos(circle, 120, 90, circlesData[index].r, "", 1200)
+          animatePos(circle, 120, 90, circlesData[index].r, "")
         );
 
       } else if (scrollPercentage > break7 && scrollPercentage <= break8) {
@@ -193,7 +193,6 @@ import {break5, break6, break7, break8, break9, break10, break11, break12, circl
         circles.forEach((circle: any, index: number) =>
           animatePos(circle, circlesData[index].cx2, circlesData[index].cy2, 6)
         );
-        
 
       } else if (scrollPercentage > break10 && scrollPercentage <= break11) {
 

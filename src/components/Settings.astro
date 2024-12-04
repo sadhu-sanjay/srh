@@ -1,10 +1,10 @@
 <div
-  class="sticky -top-full left-1/2 w-full bg-red-800 transition-all duration-1000"
+  class=" z-50 sticky -top-full left-1/2 w-full bg-red-800 transition-all duration-1000"
   id="settings-svg-container"
 >
   <svg
     id="settings-icon1"
-    height="100dvh"
+    height="95dvh"
     width="100dvh"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@
 
   <svg
     id="settings-icon2"
-    height="100dvh"
+    height="95dvh"
     width="100dvh"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@
 
   <svg
     id="settings-icon3"
-    height="100dvh"
+    height="95dvh"
     width="100dvh"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@
 
   <svg
     id="settings-icon4"
-    height="100dvh"
+    height="95dvh"
     width="100dvh"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -114,6 +114,7 @@
     break11,
     break12,
     break13,
+    break14,
   } from "../constants";
 
   const settingsIcon1 = document.getElementById("settings-icon1");
@@ -187,14 +188,17 @@
       settingsIcon3!.style.scale = "1";
 
       settingsIcon4!.style.top = "80dvh";
-      settingsIcon4!.style.scale = "2.3";
-      settingsIcon4!.style.right = "20%";
+      settingsIcon4!.style.scale = "2.7";
+      settingsIcon4!.style.right = "10%";
       
       empericalTextGroup!.style.top = "120dvh"
 
-    }else {
+    } else if (scrollPercentage > break13 && scrollPercentage <= break14) {
 
-      empericalTextGroup!.style.top = "0dvh"
+      settingsIcon4!.style.top = "200dvh";
+      settingsIcon4!.style.scale = "1";
+
+      empericalTextGroup!.style.top = "200dvh"
     }
   });
 </script>
