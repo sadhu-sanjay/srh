@@ -1,18 +1,18 @@
 <div
-  class=" items-center top-full flex  flex-col transition-all duration-[1600ms]"
-  id="emperical-textGroup"
+  class="absolute top-0 bg-red-900 items-center flex  flex-col transition-all duration-[1000ms]"
+  id="test-group"
 >
-  <h1
+  <!-- <h1
     class="text-[12.5rem] font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
   >
-    EMPERICAL
-  </h1>
-  <div class="relative translate-x-1/3  flex flex-col justify-start">
+    Testy Test
+  </h1> -->
+  <!-- <div class="relative translate-x-1/3  flex flex-col justify-start">
 
     <div
       class="text-[9rem] font-black leading-none text-secondary-accent transition-all delay-999 duration-1000"
     >
-      TOOLKIT
+      Sanjay TEst Gosemi
     </div>
 
     <div class="leading-2 w-5/6 text-xl font-normal text-secondary-accent">
@@ -23,7 +23,7 @@
       that measures what matters(1).
     </div>
 
-  </div>
+  </div> -->
 
 </div>
 
@@ -32,7 +32,7 @@
 
   const elementScroll = document.getElementById("main-window");
   const empericalTextGroup = document.getElementById(
-    "emperical-textGroup"
+    "test-group"
   ) as HTMLElement;
 
   elementScroll?.addEventListener("scroll", (el: Event) => {
@@ -40,17 +40,17 @@
     const scrollableHeight = target.scrollHeight - window.outerHeight;
     const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
 
-    if (scrollPercentage < break12) {
+    if (scrollPercentage < break1) {
 
-      empericalTextGroup.style.top = "100%"
+      empericalTextGroup.style.top = "0"
 
-    } else if (scrollPercentage > break12 && scrollPercentage <= break13) {
+    } else if (scrollPercentage > break1 && scrollPercentage <= break2) {
 
-      empericalTextGroup.style.top = "15%"
+      empericalTextGroup.style.top = "100dvh"
 
     }else {
 
-      empericalTextGroup.style.top = "100%"
+      // empericalTextGroup.style.top = "100%"
     }
   });
 </script>
