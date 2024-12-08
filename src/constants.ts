@@ -15,6 +15,7 @@ export const break11 = multipler * 11
 export const break12 = multipler * 12
 export const break13 = multipler * 13
 export const break14 = multipler * 14
+export const break15 = multipler * 15
 
 export const circlesData = [ 
       { cx: -20, cy: -40, cx1: 120, cy1: 130, cx2: 15, cy2: 0, r: 25, fill: "rgba(0,250,250, 0.9)", fill1: "rgba(0,250,250, 0.9)", },

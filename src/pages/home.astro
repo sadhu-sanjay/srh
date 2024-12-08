@@ -51,6 +51,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
   id="main-window"
   class="relative h-[100dvh] w-[100dvw] overflow-scroll bg-white"
 >
+
   <img
     id="logo"
     src="SRHLogo_Glitch.gif"
@@ -63,7 +64,6 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
     class="relative -top-[100dvh] left-1/2 h-[2000dvh] w-[120%] -translate-x-1/2 border-4 border-rose-800 bg-primary"
   >
 
-    <!-- <EmpericalText /> -->
     <Settings />
     <div
       id="mainTitle"
@@ -123,8 +123,21 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
   </div>
 
   <script>
-
-    import { break1, break2, break3, break4, break5, break6, break7, break8, break9, break10, break11, break12, break13, } from "../constants";
+    import {
+      break1,
+      break2,
+      break3,
+      break4,
+      break5,
+      break6,
+      break7,
+      break8,
+      break9,
+      break10,
+      break11,
+      break12,
+      break13,
+    } from "../constants";
 
     const logo = document.getElementById("logo") as HTMLImageElement;
     const mainTitle = document.getElementById("mainTitle") as HTMLElement;
@@ -246,6 +259,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         scrolledPercentage > break4 &&
         scrolledPercentage <= break5
       ) {
+
         if (isMobile) {
           mainTitle.style.top = "86%";
           para1.style.top = "-83%";
@@ -321,21 +335,16 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
       ) {
         iExpendable.style.width = "5.3rem";
         iExpendable.style.transform = "translateX(70px) scaleY(40)";
-      
       } else if (
         scrolledPercentage > break11 &&
         scrolledPercentage <= break12
       ) {
-
         iExpendable.style.transform = "translateX(70px) scaleY(35)";
-
       } else if (
         scrolledPercentage > break12 &&
         scrolledPercentage <= break13
       ) {
-
         iExpendable.style.transform = "translateX(70px) scaleY(35)";
-
       }
     });
   </script>

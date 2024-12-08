@@ -1,12 +1,23 @@
 <div
-  class="absolute top-0 bg-red-900 items-center flex  flex-col transition-all duration-[1000ms]"
+  class=" sticky opacity-0 -top-[100dvh] left-1/2 -translate-x-1/2 h-[120dvh] flex flex-col items-center bg-pink-900 transition-all duration-[1000ms]"
   id="test-group"
 >
+
+  <div>Sanjay Goswami Test Result of the Paper Plane</div>
+  <div>Sanjay Goswami Test Result of the Paper Plane</div>
+  <div>Sanjay Goswami Test Result of the Paper Plane</div>
+  <div>Sanjay Goswami Test Result of the Paper Plane</div>
+  <div>Sanjay Goswami Test Result of the Paper Plane</div>
+  <div>Sanjay Goswami Test Result of the Paper Plane</div>
+
+  <div class="bg-green-900"> Sanjay Goswami Test Result of the Paper Plane </div>
+
   <!-- <h1
     class="text-[12.5rem] font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
   >
     Testy Test
   </h1> -->
+
   <!-- <div class="relative translate-x-1/3  flex flex-col justify-start">
 
     <div
@@ -28,10 +39,24 @@
 </div>
 
 <script>
-  import { break4, break3, break9, break10, break11, break12, break13 , break1, break2} from "../constants";
+  import {
+    break4,
+    break5,
+    break6,
+    break3,
+    break9,
+    break10,
+    break11,
+    break12,
+    break13,
+    break1,
+    break2,
+    break14,
+    break15
+  } from "../constants";
 
   const elementScroll = document.getElementById("main-window");
-  const empericalTextGroup = document.getElementById(
+  const testGroup = document.getElementById(
     "test-group"
   ) as HTMLElement;
 
@@ -40,17 +65,21 @@
     const scrollableHeight = target.scrollHeight - window.outerHeight;
     const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
 
-    if (scrollPercentage < break1) {
+    if (scrollPercentage < break13) {
 
-      empericalTextGroup.style.top = "0"
+      testGroup.style.top = "-100dvh"
+      testGroup.style.opacity = "0"
 
-    } else if (scrollPercentage > break1 && scrollPercentage <= break2) {
+    } else if (scrollPercentage > break13 && scrollPercentage <= break14) {
 
-      empericalTextGroup.style.top = "100dvh"
+      testGroup.style.top = "0"
+      testGroup.style.opacity = "1"
 
-    }else {
+    } else if (scrollPercentage > break14 && scrollPercentage <= break15) {
 
-      // empericalTextGroup.style.top = "100%"
+      testGroup.style.top = "-100dvh"
+      testGroup.style.opacity = "0"
+
     }
   });
 </script>
