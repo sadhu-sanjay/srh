@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animate Absolute to Sticky</title>
+    <style>
+      body {
+        margin: 0;
+        height: 200vh; /* To enable scrolling */
+      }
+
+      #container {
+        position: relative; /* Establish positioning context */
+        height: 100vh;
+        background-color: lightgray;
+        padding: 20px;
+      }
+
+      .animate-sticky {
+        top: 200px ; /* Animate to a higher top value */
+      }
+
+      #test1 {
+        position: absolute;
+        background-color: green;
+        top: 0px;
+        width: 400px;
+        height: 600px;
+        transition: transform 2s ease-in-out;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="test1">1st Sanjay Goswami</div>
+    </div>
+    <script>
+      setTimeout(() => {
+        console.log("hi");
+        const test1 = document.getElementById("test1");
+        test1.classList.add("animate-sticky");
+      }, 1000);
+    </script>
+  </body>
+</html>
+
