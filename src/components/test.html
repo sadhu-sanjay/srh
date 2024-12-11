@@ -5,44 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animate Absolute to Sticky</title>
     <style>
-      body {
-        margin: 0;
-        height: 200vh; /* To enable scrolling */
-      }
-
       #container {
         position: relative; /* Establish positioning context */
-        height: 100vh;
+        height: 70vh;
         background-color: lightgray;
         padding: 20px;
-      }
-
-      .animate-sticky {
-        top: 200px ; /* Animate to a higher top value */
+        margin: 20px;
+        overflow: scroll;
+        transition: all 1s ease-in-out;
       }
 
       #test1 {
-        position: absolute;
-        background-color: green;
+        position: sticky;
+        background-color: red;
+        right: 0px;
+        margin-left: auto;
         top: 0px;
         width: 400px;
-        height: 600px;
-        transition: transform 2s ease-in-out;
+        height: 200px;
       }
 
+      #test2.animate-sticky {
+        top: 0px;
+      }
+
+      #test2 {
+        position: fixed;
+        top: -100dvh;
+        width: 200px;
+        height: 300px;
+        background-color: green;
+        transition: all 1s ease;
+      }
+
+      #test3 {
+        background-color: blue;
+        position: sticky;
+        left: 200px;
+        right: 0;
+        width: 200px;
+        height: 14300px;
+      }
     </style>
   </head>
   <body>
-    <div id="container">
+
+    <div
+      id="scroll-container"
+      style="
+        overflow: scroll;
+        background-color: lightblue;
+        width: 100dvh;
+        height: 100dvh;
+      "
+    >
+
       <div id="test1">1st Sanjay Goswami</div>
+      <div id="test2">1st Sanjay Goswami</div>
+      <div id="test3">1st Sanjay Goswami</div>
+
     </div>
     <script>
       setTimeout(() => {
         console.log("hi");
-        const test1 = document.getElementById("test1");
-        test1.classList.add("animate-sticky");
+        const test2 = document.getElementById("test2");
+        const scrollContainer = document.getElementById("scroll-container");
+        const scrollableHeight = scrollContainer.scrollHeight;
+        const screenHeight = window.outerHeight;
+        const scrollPosition = scrollContainer.scrollTop;
+
+        const scrollableContent = setTimeout(() => {
+          test2.classList.add("animate-sticky");
+        }, 1000);
       }, 1000);
     </script>
   </body>
 </html>
-
