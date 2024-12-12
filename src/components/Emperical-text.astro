@@ -1,5 +1,5 @@
 <div
-  class="fixed w-full -top-full flex h-[100dvh] flex-col items-center justify-center bg-secondary-accent text-center transition-all  duration-1000"
+  class="fixed pointer-events-none  -top-[100dvh] w-[120dvw] flex h-[100dvh] flex-col items-center justify-center bg-secondary-accent text-center transition-all  duration-1000"
   id="test-group"
 >
   <div class="text-4xl font-black text-black">See work</div>
@@ -32,11 +32,12 @@
     const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
 
     if (scrollPercentage < break13) {
-      testGroup.style.top = "-100%";
-    } else if (scrollPercentage > break13 && scrollPercentage <= break14) {
-      testGroup.style.top = "0%";
+      testGroup.style.top = "-100dvh"
+    } else if (scrollPercentage >= break13 && scrollPercentage <= break14) {
+      testGroup.style.top = "0"
     } else if (scrollPercentage > break14 && scrollPercentage <= break15) {
-
+      // testGroup.style.top = "-100dvh"
     }
   });
+
 </script>

@@ -49,9 +49,8 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
 <main
   id="main-window"
-  class="relative  h-[100dvh] w-[100dvw] overflow-scroll bg-white"
+  class="relative h-[100dvh] w-[100dvw] overflow-scroll bg-white"
 >
-
   <img
     id="logo"
     src="SRHLogo_Glitch.gif"
@@ -61,7 +60,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
   <div
     id="spacer"
-    class="relative -top-[100dvh] left-1/2 h-[2200dvh] w-[120%] -translate-x-1/2 border-4 border-rose-800 bg-primary"
+    class="relative -top-[100dvh] -left-[10%] h-[2200dvh] w-[120%] border-4 bg-primary"
   >
 
     <Settings />
@@ -118,10 +117,10 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
     <Circles />
     <StrategyText />
+    <EmpericalText />
 
   </div>
-    
-    <EmpericalText />
+
 
   <script>
     import {
@@ -186,7 +185,6 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         para2.style.top = "200%";
         para3.style.top = "200%";
         arrow.style.top = "200%";
-
       } else if (
         // STEP 1
         scrolledPercentage > break1 &&
@@ -261,7 +259,6 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         scrolledPercentage > break4 &&
         scrolledPercentage <= break5
       ) {
-
         if (isMobile) {
           mainTitle.style.top = "86%";
           para1.style.top = "-83%";
