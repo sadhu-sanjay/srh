@@ -44,23 +44,21 @@ const { title } = Astro.props;
       rgb(var(--accent-light)) 30%,
       white 60%
     );
+    font-size: 20px;
+    line-height: 1.6rem;
 
     /* Font Sizes */
     --font-size-base: 20px; /* Base font size */
     --font-size-heading: 32px; /* Heading font size */
-    --font-size-button: 18px; /* Button font size */
+    --font-size-button: 26px; /* Button font size */
     
   }
 
   button {
     font-family: inherit;
     font-size: var(--font-size-button);
-    line-height: 1.5;
     color: rgb(var(--accent));
     background: transparent;
-    border: 1px solid rgb(var(--accent));
-    border-radius: 8px;
-    padding: 10px 20px;
     cursor: pointer;
     transition: background 0.3s, color 0.3s;
   }
