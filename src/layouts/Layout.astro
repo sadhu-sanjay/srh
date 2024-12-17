@@ -4,11 +4,17 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+import { ClientRouter } from 'astro:transitions';
+
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+
+    <ClientRouter/>
+
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
@@ -24,65 +30,64 @@ const { title } = Astro.props;
     />
     <!-- End Load Font -->
     <title>{title}</title>
+    <style is:global>
+      :root {
+        --primary: 0, 0, 255;
+        --accent: 255, 29, 141;
+        --secondary-accent: 255, 255, 13;
+        --accent-light: rgb(224, 204, 250);
+        --accent-dark: rgb(49, 10, 101);
+        --accent-gradient: linear-gradient(
+          45deg,
+          rgb(var(--accent)),
+          rgb(var(--accent-light)) 30%,
+          white 60%
+        );
+        font-size: 20px;
+        line-height: 1.6rem;
 
-    
+        /* Font Sizes */
+        --font-size-base: 20px; /* Base font size */
+        --font-size-heading: 32px; /* Heading font size */
+        --font-size-button: 26px; /* Button font size */
+      }
+
+      button {
+        font-family: inherit;
+        font-size: var(--font-size-button);
+        color: rgb(var(--accent));
+        background: transparent;
+        cursor: pointer;
+        transition:
+          background 0.3s,
+          color 0.3s;
+      }
+
+      button:hover {
+        background: rgb(var(--accent));
+        color: #fff;
+      }
+
+      html {
+        font-family: "Poppins", system-ui, sans-serif;
+        background: #13151a;
+      }
+      code {
+        font-family:
+          Menlo,
+          Monaco,
+          Lucida Console,
+          Liberation Mono,
+          DejaVu Sans Mono,
+          Bitstream Vera Sans Mono,
+          Courier New,
+          monospace;
+      }
+
+    </style>
   </head>
 
   <body>
-
-
     <slot />
   </body>
 </html>
-<style is:global>
-  :root {
-    --primary: 0, 0, 255;
-    --accent: 255, 29, 141;
-    --secondary-accent: 255, 255, 13;
-    --accent-light: rgb(224, 204, 250);
-    --accent-dark: rgb(49, 10, 101);
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-    font-size: 20px;
-    line-height: 1.6rem;
-
-    /* Font Sizes */
-    --font-size-base: 20px; /* Base font size */
-    --font-size-heading: 32px; /* Heading font size */
-    --font-size-button: 26px; /* Button font size */
-  }
-
-  button {
-    font-family: inherit;
-    font-size: var(--font-size-button);
-    color: rgb(var(--accent));
-    background: transparent;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-  }
-
-  button:hover {
-    background: rgb(var(--accent));
-    color: #fff;
-  }
-
-  html {
-    font-family: "Poppins", system-ui, sans-serif;
-    background: #13151a;
-  }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
-  }
-</style>

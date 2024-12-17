@@ -1,6 +1,15 @@
+---
+import MyButton from "../components/atoms/MyButton.astro";
+import Logo from "../components/atoms/logo.astro";
+---
 
-
-<a href="/">
-
-<h1 class="bg-red-500 font-extrabold text-black">Our Work</h1>
-</a>
+<div
+  class="pointer-events-none fixed top-0 flex h-[100dvh] w-[120dvw] flex-col items-center justify-center bg-secondary-accent text-center transition-all duration-1000"
+  id="test-group"
+>
+  <a href="/">
+    <MyButton title="My work" href="/" />
+  </a>
+  <div class="bg-green-900"></div>
+  <Logo />
+</div>
