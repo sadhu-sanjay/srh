@@ -1,0 +1,63 @@
+---
+import Logo from "./atoms/logo.astro";
+---
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div>
+                <!-- <img src="/path/to/logo.png" alt="Company Logo" /> -->
+            <Logo />
+            </div>
+            <div class="footer-links">
+                <a href="/about">About Us</a>
+                <a href="/services">Services</a>
+                <a href="/contact">Contact</a>
+                <a href="/privacy">Privacy Policy</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; {new Date().getFullYear()} Company Name. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        background-color: rgb(var(--accent));
+        color: #fff;
+        padding: 20px 0;
+    }
+    .container {
+        padding: 16px ;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+    }
+    .footer-logo img {
+        height: 50px;
+    }
+    .footer-links, .footer-social {
+        display: flex;
+        gap: 15px;
+    }
+    .footer-links a, .footer-social a {
+        color: #fff;
+        text-decoration: none;
+    }
+    .footer-bottom {
+        margin-top: 20px;
+    }
+</style>

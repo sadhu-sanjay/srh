@@ -2,12 +2,13 @@
 import MyButton from "../components/atoms/MyButton.astro";
 import Logo from "../components/atoms/logo.astro";
 import Layout from "../layouts/Layout.astro";
+import MyFooter from "../components/My-footer.astro";
 ---
 
 <Layout title="our work">
 
   <div
-    class="pointer-events-none fixed top-0 flex h-[100dvh] w-[120dvw] flex-col items-center justify-center bg-secondary-accent text-center transition-all duration-1000"
+    class=" left-1/2 -translate-x-1/2 pointer-events-none fixed top-0 flex h-[100dvh] w-[120dvw] flex-col items-center justify-center bg-primary text-center transition-all duration-1000"
     id="test-group"
   >
     <a href="/">
@@ -18,10 +19,5 @@ import Layout from "../layouts/Layout.astro";
     <p>P is For TEst & TEst</p>
   </div>
 
-  <select>
-    <option value="/play">Play</option>
-    <option value="/work">Work</option>
-    <option value="/about">About</option>
-    <option value="/contact">Contact</option>
-  </select>
+  <MyFooter/>
 </Layout>
