@@ -4,93 +4,114 @@ import Logo from "../components/atoms/logo.astro";
 import Layout from "../layouts/Layout.astro";
 import MyFooter from "../components/My-footer.astro";
 import PlaceHolderImage from "../assets/images/placeHolderImage.astro";
+
+import { BrandCategories } from "../constants";
+
 ---
 
 <Layout title="our work">
   <div
-    class="relative min-h-[100dvh] w-full flex-col bg-primary transition-all duration-1000"
-    id="test-group"
+    class="flex h-[100dvh] w-full flex-col items-center justify-center bg-primary"
   >
-    <div
-      id="main-container"
-      class="grid h-auto w-full grid-cols-1 items-center justify-items-center gap-8 bg-red-600 py-10 sm:grid-cols-2 sm:px-24 md:grid-cols-2 2xl:grid-cols-3"
-    >
-      <item
-        style="background-image: url(/public/logo.png);"
-        class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
-      >
-        <img
-          src="https://picsum.photos/seed/picsum/600/400"
-          class="h-full w-full object-cover"
-        />
-      </item>
-      <item
-        style="background-image: url(/public/logo.png);"
-        class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
-      >
-        <img
-          src="https://picsum.photos/seed/picsum/600/400"
-          class="h-full w-full object-cover"
-        />
-      </item><item
-        style="background-image: url(/public/logo.png);"
-        class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
-      >
-        <img
-          src="https://picsum.photos/seed/picsum/600/400"
-          class="h-full w-full object-cover"
-        />
-      </item><item
-        style="background-image: url(/public/logo.png);"
-        class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
-      >
-        <img
-          src="https://picsum.photos/seed/picsum/600/400"
-          class="h-full w-full object-cover"
-        />
-      </item><item
-        style="background-image: url(/public/logo.png);"
-        class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
-      >
-        <img
-          src="https://picsum.photos/seed/picsum/600/400"
-          class="h-full w-full object-cover"
-        />
-      </item><item
-        style="background-image: url(/public/logo.png);"
-        class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
-      >
-        <img
-          src="https://picsum.photos/seed/picsum/600/400"
-          class="h-full w-full object-cover"
-        />
-      </item><item
-        style="background-image: url(/public/logo.png);"
-        class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
-      >
-        <img
-          src="https://picsum.photos/seed/picsum/600/400"
-          class="h-full w-full object-cover"
-        />
-      </item><item
-        style="background-image: url(/public/logo.png);"
-        class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
-      >
-        <img
-          src="https://picsum.photos/seed/picsum/600/400"
-          class="h-full w-full object-cover"
-        />
-      </item><item
-        style="background-image: url(/public/logo.png);"
-        class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
-      >
-        <img
-          src="https://picsum.photos/seed/picsum/600/400"
-          class="h-full w-full object-cover"
-        />
-      </item>
+    <div class="flex flex-col items-center justify-center">
+      <Logo />
+      <h1 class="w-[80%] text-center text-9xl font-bold text-white">
+        THE <span class="text-secondary">WORK</span>
+      </h1>
+      <p class="w-[80%] text-center text-xl text-white">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-8">
+      {BrandCategories.map((category: string) => <MyButton class="border-2" title={category} />)}
     </div>
   </div>
-
-  <MyFooter />
 </Layout>
+
+<div
+  class="relative min-h-[100dvh] w-full flex-col bg-primary transition-all duration-1000"
+  id="test-group"
+>
+  <div
+    id="main-container"
+    class="grid h-auto w-full grid-cols-1 items-center justify-items-center gap-8 bg-red-600 py-10 sm:grid-cols-2 sm:px-24 md:grid-cols-2 2xl:grid-cols-3"
+  >
+    <item
+      style="background-image: url(/logo.png);"
+      class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
+    >
+      <img
+        src="https://picsum.photos/seed/picsum/600/400"
+        class="h-full w-full object-cover"
+      />
+    </item>
+    <item
+      style="background-image: url(/logo.png);"
+      class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
+    >
+      <img
+        src="https://picsum.photos/seed/picsum/600/400"
+        class="h-full w-full object-cover"
+      />
+    </item><item
+      style="background-image: url(/logo.png);"
+      class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
+    >
+      <img
+        src="https://picsum.photos/seed/picsum/600/400"
+        class="h-full w-full object-cover"
+      />
+    </item><item
+      style="background-image: url(/logo.png);"
+      class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
+    >
+      <img
+        src="https://picsum.photos/seed/picsum/600/400"
+        class="h-full w-full object-cover"
+      />
+    </item><item
+      style="background-image: url(/logo.png);"
+      class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
+    >
+      <img
+        src="https://picsum.photos/seed/picsum/600/400"
+        class="h-full w-full object-cover"
+      />
+    </item><item
+      style="background-image: url(/logo.png);"
+      class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
+    >
+      <img
+        src="https://picsum.photos/seed/picsum/600/400"
+        class="h-full w-full object-cover"
+      />
+    </item><item
+      style="background-image: url(/logo.png);"
+      class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
+    >
+      <img
+        src="https://picsum.photos/seed/picsum/600/400"
+        class="h-full w-full object-cover"
+      />
+    </item><item
+      style="background-image: url(/logo.png);"
+      class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
+    >
+      <img
+        src="https://picsum.photos/seed/picsum/600/400"
+        class="h-full w-full object-cover"
+      />
+    </item><item
+      style="background-image: url(/logo.png);"
+      class="aspect-video h-full w-[80%] border-2 bg-red-800 object-center sm:w-full"
+    >
+      <img
+        src="https://picsum.photos/seed/picsum/600/400"
+        class="h-full w-full object-cover"
+      />
+    </item>
+  </div>
+</div>
+
+<MyFooter />

@@ -32,3 +32,4 @@ export const circlesData = [
       { cx: 130, cy: 80, cx1: 120, cy1: 70, cx2: 15, cy2: 165, r: 25, fill: "rgba(var(--accent), 0.4)", fill1: "rgba(var(--accent), 0.9)", },
 ];
 
+export const BrandCategories = [ "Business Strategy", "Brand Identity", "Concepting", "Strategy", "Business", "Media", "Agency New" ];
