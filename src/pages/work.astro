@@ -3,16 +3,41 @@ import MyButton from "../components/atoms/MyButton.astro";
 import Logo from "../components/atoms/logo.astro";
 import Layout from "../layouts/Layout.astro";
 import MyFooter from "../components/My-footer.astro";
+import PlaceHolderImage from "../assets/images/placeHolderImage.astro";
 ---
 
 <Layout title="our work">
-
   <div
-    class="relative left-1/2 flex h-[100dvh] w-[120dvw] -translate-x-1/2 flex-col items-center justify-center bg-primary text-center transition-all duration-1000"
+    class="relative left-1/2 min-h-[100dvh] w-[120dvw] -translate-x-1/2 flex-col items-center bg-primary transition-all duration-1000"
     id="test-group"
   >
+    <div
+      id="main-container"
+      class="grid h-auto w-full grid-cols-1 items-center justify-items-center gap-10 bg-red-600 p-8 sm:grid-cols-2"
+    >
+      <item class="w-[80%] border-2 bg-red-800 sm:w-auto">
+        <PlaceHolderImage />
+      </item>
+
+      <item class="w-[80%] border-2 bg-green-700 sm:w-auto">
+        <PlaceHolderImage />
+      </item>
+      
+      <item class="w-[80%] border-2 bg-green-700 sm:w-auto">
+        <PlaceHolderImage />
+      </item>
+      <item class="w-[80%] border-2 bg-green-700 sm:w-auto">
+        <PlaceHolderImage />
+      </item>
+      <item class="w-[80%] border-2 bg-green-700 sm:w-auto">
+        <PlaceHolderImage />
+      </item>
+      <item class="w-[80%] border-2 bg-green-700 sm:w-auto">
+        <PlaceHolderImage />
+      </item>
+      
+    </div>
   </div>
 
   <MyFooter />
-
 </Layout>
