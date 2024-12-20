@@ -64,4 +64,20 @@ import Logo from "./atoms/logo.astro";
   .footer-bottom {
     margin-top: 20px;
   }
+
+  @media screen and (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .footer-links,
+    .footer-social {
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+    
+  }
+
 </style>
