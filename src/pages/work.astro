@@ -4,8 +4,17 @@ import Logo from "../components/atoms/logo.astro";
 import Layout from "../layouts/Layout.astro";
 import MyFooter from "../components/My-footer.astro";
 import PlaceHolderImage from "../assets/images/placeHolderImage.astro";
-
 import { BrandCategories } from "../constants";
+
+import p1 from "../assets/images/p1.png";
+import p2 from "../assets/images/p2.png";
+import p3 from "../assets/images/p3.png";
+import p4 from "../assets/images/p4.png";
+import p5 from "../assets/images/p5.png";
+import p6 from "../assets/images/p6.png";
+import p7 from "../assets/images/p7.png";
+
+import Image from "astro/components/Image.astro";
 ---
 
 <Layout title="our work">
@@ -21,7 +30,10 @@ import { BrandCategories } from "../constants";
         greatest hits.
       </p>
     </div>
-    <div class="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-4 px-8">
+
+    <div
+      class="mt-8 flex flex-wrap items-center justify-center gap-2 px-8 sm:gap-4"
+    >
       {
         BrandCategories.map((category: string) => (
           <MyButton
@@ -32,30 +44,62 @@ import { BrandCategories } from "../constants";
       }
     </div>
   </div>
-</Layout>
 
-<div
-  class="relative min-h-[100dvh] w-full flex-col bg-primary transition-all duration-1000"
-  id="test-group"
->
   <div
-    id="main-container"
-    class="grid h-auto w-full grid-cols-1 items-center justify-items-center gap-8  py-10 sm:grid-cols-2 sm:px-24 md:grid-cols-2 2xl:grid-cols-3"
+    class="flex min-h-[100dvh] w-full flex-col items-center bg-primary p-8 transition-all duration-1000 sm:p-12"
+    id="test-group"
   >
-    {
-      Array.from({ length: 10 }).map((_, index) => (
-        <item
-          style="background-image: url(/logo.png);"
-          class="aspect-video rounded-2xl overflow-clip h-full w-[80%]  object-center sm:w-full"
-        >
-          <img
-            src="https://picsum.photos/seed/picsum/600/400"
-            class="h-full w-full object-cover"
-          />
-        </item>
-      ))
-    }
-  </div>
-</div>
+    <div
+      id="main-container"
+      class="grid h-auto w-full grid-cols-1 items-center justify-items-center gap-8 py-10 sm:grid-cols-2 sm:px-24 md:grid-cols-2 2xl:grid-cols-3"
+    >
+      <item
+        style="background-image: url(/logo.png);"
+        class="aspect-video h-full w-[80%] overflow-clip rounded-2xl object-center sm:w-full"
+      >
+        <Image
+          class="h-full w-full object-cover"
+          src={p1}
+          alt="A description of my image."
+        />
+        <Image
+          class="h-full w-full object-cover"
+          src={p2}
+          alt="A description of my image."
+        />
+        <Image
+          class="h-full w-full object-cover"
+          src={p3}
+          alt="A description of my image."
+        />
+        <Image
+          class="h-full w-full object-cover"
+          src={p4}
+          alt="A description of my image."
+        />
+        <Image
+          class="h-full w-full object-cover"
+          src={p5}
+          alt="A description of my image."
+        />
+        <Image
+          class="h-full w-full object-cover"
+          src={p6}
+          alt="A description of my image."
+        />
+        <Image
+          class="h-full w-full object-cover"
+          src={p7}
+          alt="A description of my image."
+        />
+      </item>
+    </div>
 
-<MyFooter />
+    <MyButton
+      class="left-1/2 !border-2 !border-white !py-2.5 !text-xl !font-normal !text-white"
+      title="View More"
+    />
+  </div>
+
+  <MyFooter />
+</Layout>
