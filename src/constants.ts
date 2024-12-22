@@ -33,11 +33,12 @@ export const circlesData = [
 ];
 
 export const BrandCategories = [ "Business Strategy", "Brand Identity", "Concepting", "Strategy", "Business", "Media", "Agency New" ];
+
 export const projects = [
       { id: 1, title: "HUNDREDS OF BEAVERS", category: "Emperical Marketing, Brand Strategy", img: "p1.png" },
       { id: 2, title: "VERLO", category: "Emperical Marketing, Brand Strategy", img: "p2.png" },
       { id: 3, title: "INTEGRATIVE THERAPUTICS", category: "Emperical Marketing, Brand Strategy", img: "p3.png" },
-      {id: 4, title: "CHILDREN'S WISCONSIN", category: "Emperical Marketing, Brand Strategy", img: "p4.png" },
+      { id: 4, title: "CHILDREN'S WISCONSIN", category: "Emperical Marketing, Brand Strategy", img: "p4.png" },
       { id: 5, title: "URBAN PIE PIZZA", category: "Emperical Marketing, Brand Strategy", img: "p5.png" },
-      {id: 6, title: "ORIENTAL THEATRE", category: "Emperical Marketing, Brand Strategy", img: "p6.png" },
+      { id: 6, title: "ORIENTAL THEATRE", category: "Emperical Marketing, Brand Strategy", img: "p6.png" },
 ]
