@@ -33,13 +33,13 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
       width: 8.5rem;
     }
     .margin-right-custom {
-      margin-right: 1rem;
+      margin-right: 2rem;
     }
   }
 
   @media (min-width: 1536px) and (max-width: 1920px) {
     .i-width {
-      width: 7rem;
+      width: 6.8rem;
     }
     .margin-right-custom {
       margin-right: 1.2rem;
@@ -109,7 +109,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
       <p
         id="para2"
-        class="absolute left-1/2 top-[200%] h-28 w-32 translate-x-7 text-left text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:translate-x-32 xl:text-2xl xl:font-normal"
+        class="absolute left-[52%] top-[200%] h-28 w-32 translate-x-7 text-left text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:translate-x-32 xl:text-2xl xl:font-normal"
       >
         We use strategy, creative and media to make brands famous in their
         categories.
@@ -229,7 +229,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         } else if (isLaptopLarge) {
           iExpendable.style.transform = "scaleY(40)";
         } else if (isDesktop) {
-          iExpendable.style.transform = "scaleY(20)";
+          iExpendable.style.transform = "scaleY(40)";
         }
       } else if (
         // STEP 3
@@ -295,44 +295,71 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
           arrow.style.top = "-110%";
           para3.style.top = "-110%";
 
-          svgCircles.style.opacity = "0";
           svgCircles.style.top = "-140dvh";
+
         } else if (isDesktop) {
+
           mainTitle.style.top = "75%";
-          arrow.style.top = "-95%";
+          arrow.style.top = "-85%";
+
+          svgCircles.style.top = "-140dvh";
         }
 
+
+        svgCircles.style.opacity = "0";
         arrow.style.transitionDuration = "1s";
         arrow.style.opacity = "1";
+
       } else if (scrolledPercentage > break6 && scrolledPercentage <= break7) {
-        arrow.style.transitionDuration = "1.7s";
-        arrow.style.opacity = "0";
+
+        // STEP 6
+        arrow.style.transitionDuration = "2.3s";
 
         if (isMobile) {
         } else if (isLaptopLarge) {
           arrow.style.top = "-270%";
           mainTitle.style.top = "200%";
 
-          svgCircles.style.opacity = "1";
-          svgCircles.style.top = "0";
+          iExpendable.style.transform = "translateX(0px) scaleY(40)";
+        }else if (isDesktop) {
+
+          arrow.style.top = "-230%";
+          mainTitle.style.top = "200%";
 
           iExpendable.style.transform = "translateX(0px) scaleY(40)";
         }
+
+        svgCircles.style.opacity = "1";
+        svgCircles.style.top = "0";
+        arrow.style.opacity = "0";
+
       } else if (scrolledPercentage > break7 && scrolledPercentage <= break8) {
+        // STEP 7
         if (isMobile) {
+
         } else if (isLaptopLarge) {
           iExpendable.style.transform = "translateX(70px) scaleY(40) ";
         }
       } else if (scrolledPercentage > break8 && scrolledPercentage <= break9) {
+
+        if (isMobile) {
+
+        } else if (isDesktop) {
+
+          
+        }
+
         iExpendable.style.width = "5.3rem";
         iExpendable.style.transform = "translateX(70px) scaleY(40) ";
       } else if (scrolledPercentage > break9 && scrolledPercentage <= break10) {
+
         iExpendable.style.transform = "translateX(400px) scaleY(40) ";
         iExpendable.style.width = "16rem";
       } else if (
         scrolledPercentage > break10 &&
         scrolledPercentage <= break11
       ) {
+
         iExpendable.style.width = "5.3rem";
         iExpendable.style.transform = "translateX(70px) scaleY(40)";
 
