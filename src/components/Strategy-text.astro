@@ -1,0 +1,51 @@
+<div
+  class="absolute left-[200%] top-1/4 flex w-[100dvw] -translate-x-1/2 flex-col transition-all duration-[1600ms]"
+  id="strategy-text"
+>
+  <h1
+    class="text-7xl font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
+  >
+    INTEGRATED
+  </h1>
+  <div
+    class="text-[12dvw] font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
+  >
+    STRATEGY
+  </div>
+  <div class="leading-2 w-5/6 text-xl font-normal text-secondary-accent">
+    We do all planning with strategy, creative<br />
+    and media in the room together because <br />
+    the assembly line approach doesn't work <br />
+    in this fragmented, rapid changing <br />
+    media landscape(1).
+  </div>
+</div>
+
+<script>
+
+  import { break9, break10, break11, break12 } from "../constants";
+
+  const elementScroll = document.getElementById("main-window");
+  const strategyText = document.getElementById("strategy-text") as HTMLElement;
+
+  elementScroll?.addEventListener("scroll", (el: Event) => {
+    const target = el.target as HTMLElement;
+    const scrollableHeight = target.scrollHeight - window.outerHeight;
+    const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
+
+    if (scrollPercentage < break9) {
+
+      strategyText.style.left = "160%";
+
+    } else if (scrollPercentage > break9 && scrollPercentage <= break10) {
+
+      strategyText.style.left = "66%";
+      strategyText.style.top = "25%";
+
+    } else if (scrollPercentage > break10)
+
+      strategyText.style.top = "106%";
+    }
+
+  );
+</script>
