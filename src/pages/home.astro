@@ -324,13 +324,15 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         if (isMobile) {
           iExpendable.style.width = "5.3rem";
         } else if (isLaptopLarge) {
-          iExpendable.style.width = "6.8rem";
+          iExpendable.style.width = "5.3rem";
         } else if (isDesktop) {
           iExpendable.style.width = "6.8rem";
         }
 
       } else if (scrolledPercentage > break8 && scrolledPercentage <= break9) {
         if (isMobile) {
+        }else if (isLaptopLarge) {
+          iExpendable.style.width = "5.3rem";
         } else if (isDesktop) {
 
           iExpendable.style.width = "6.8rem";
