@@ -144,6 +144,7 @@ import {break5, break6, break7, break8, break9, break10, break11, break12, circl
       const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
 
       if (scrollPercentage > break5 && scrollPercentage <= break6) {
+        // STEP 5
         textFame.style.top = "-100%";
         builders.style.left = "-100%";
         circles.forEach((circle: any, index) =>
@@ -155,6 +156,7 @@ import {break5, break6, break7, break8, break9, break10, break11, break12, circl
           )
         );
       } else if (scrollPercentage > break6 && scrollPercentage <= break7) {
+        // STEP 6
         textFame.style.top = "0%";
         builders.style.left = "0%";
 
@@ -163,6 +165,7 @@ import {break5, break6, break7, break8, break9, break10, break11, break12, circl
         );
 
       } else if (scrollPercentage > break7 && scrollPercentage <= break8) {
+        // STEP 7
         textFame.style.top = "-100%";
         builders.style.left = "-100%";
 
@@ -171,6 +174,7 @@ import {break5, break6, break7, break8, break9, break10, break11, break12, circl
         );
       } else if (scrollPercentage > break8 && scrollPercentage <= break9) {
 
+        // STEP 8
         circles.forEach((circle: any, index: number) =>
           animatePos(
             circle,
