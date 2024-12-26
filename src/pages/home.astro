@@ -161,6 +161,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
       "(min-width: 1280px) and (max-width: 1535px)"
     ).matches;
     const isDesktop = window.matchMedia("(min-width: 1536px)").matches;
+    const iExpendablePercent = "45"
 
     mainWindow.addEventListener("scroll", (e: Event) => {
       console.log("Main Window");
@@ -218,18 +219,15 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         scrolledPercentage <= break3
       ) {
         para1.style.top = "200%";
+        iExpendable.style.transform = `scaleY(${iExpendablePercent})`;
 
         if (isMobile) {
           mainTitle.style.top = "78%";
-          iExpendable.style.transform = "scaleY(12)";
         } else if (isTablet) {
-          iExpendable.style.transform = "scaleY(4.35)";
         } else if (isLaptop) {
-          iExpendable.style.transform = "scaleY(3)";
         } else if (isLaptopLarge) {
-          iExpendable.style.transform = "scaleY(40)";
         } else if (isDesktop) {
-          iExpendable.style.transform = "scaleY(40)";
+
         }
 
       } else if (
@@ -306,7 +304,6 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
           svgCircles.style.top = "-140dvh";
         }
 
-
         svgCircles.style.opacity = "0";
         arrow.style.transitionDuration = "1s";
         arrow.style.opacity = "1";
@@ -315,6 +312,11 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
         // STEP 6
         arrow.style.transitionDuration = "2.3s";
+        arrow.style.opacity = "0";
+
+        iExpendable.style.transform = `translateX(0px) scaleY(${iExpendablePercent})`;
+        svgCircles.style.opacity = "1";
+        svgCircles.style.top = "0";
 
         if (isMobile) {
 
@@ -323,28 +325,24 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
           arrow.style.top = "-270%";
           mainTitle.style.top = "200%";
 
-          iExpendable.style.transform = "translateX(0px) scaleY(40)";
         }else if (isDesktop) {
 
           arrow.style.top = "-230%";
           mainTitle.style.top = "200%";
 
-          iExpendable.style.transform = "translateX(0px) scaleY(66)";
 
         }
 
-        svgCircles.style.opacity = "1";
-        svgCircles.style.top = "0";
-        arrow.style.opacity = "0";
 
       } else if (scrolledPercentage > break7 && scrolledPercentage <= break8) {
         // STEP 7
+        iExpendable.style.transform = `translateX(70px) scaleY(${iExpendablePercent})`;
+        iExpendable.style.width = "5.3rem";
 
         if (isMobile) {
 
         } else if (isLaptopLarge) {
 
-          iExpendable.style.transform = "translateX(70px) scaleY(40) ";
         }
       } else if (scrolledPercentage > break8 && scrolledPercentage <= break9) {
 
@@ -355,31 +353,30 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
           
         }
 
-        iExpendable.style.width = "5.3rem";
-        iExpendable.style.transform = "translateX(70px) scaleY(40) ";
       } else if (scrolledPercentage > break9 && scrolledPercentage <= break10) {
+        // STEP 8
 
-        iExpendable.style.transform = "translateX(400px) scaleY(40) ";
+        iExpendable.style.transform = `translateX(400px) scaleY(${iExpendablePercent})`;
         iExpendable.style.width = "16rem";
+
       } else if (
         scrolledPercentage > break10 &&
         scrolledPercentage <= break11
       ) {
+        // STEP 9
 
+        iExpendable.style.transform = `translateX(10%) scaleY(${iExpendablePercent})`;
         iExpendable.style.width = "5.3rem";
-        iExpendable.style.transform = "translateX(70px) scaleY(40)";
 
       } else if (
         scrolledPercentage > break11 &&
         scrolledPercentage <= break12
       ) {
-        iExpendable.style.transform = "translateX(70px) scaleY(35)";
 
       } else if (
         scrolledPercentage > break12 &&
         scrolledPercentage <= break13
       ) {
-        iExpendable.style.transform = "translateX(70px) scaleY(35)";
       } else {
 
         logo.style.left = "6%"
