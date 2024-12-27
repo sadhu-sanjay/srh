@@ -28,10 +28,12 @@
     F<span class="relative inline-block"
       >A<div
         id="builders"
-        class="absolute -left-full top-[87%] w-auto text-6xl sm:text-8xl font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
+        class="absolute -left-full top-[87%] w-auto text-6xl font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000 sm:text-8xl"
       >
         BUILDERS
-        <div class="pl-2 leading-2 w-1/2 sm:w-5/6 text-xs sm:text-xl font-bold text-secondary-accent">
+        <div
+          class="leading-2 w-1/2 pl-2 text-xs font-bold text-secondary-accent sm:w-5/6 sm:text-xl"
+        >
           SRH spans entertainment and advertising, giving you access to top
           talent and big ideas. <br />
           <br /> We believe that big, bold stunts can be the most efficient way to
@@ -66,7 +68,6 @@
 </div>
 
 <script>
-
   const isMobile = window.matchMedia("(max-width: 639px)").matches;
   const isTablet = window.matchMedia(
     "(min-width: 640px) and (max-width: 1023px)"
@@ -124,9 +125,6 @@
     fill?: string | undefined,
     duration: number = 700
   ) {
-
-
-
     const startTime = performance.now();
     const initialCx = parseFloat(circle.getAttribute("cx") || "0");
     const initialCy = parseFloat(circle.getAttribute("cy") || "0");
@@ -180,12 +178,16 @@
     } else if (scrollPercentage > break6 && scrollPercentage <= break7) {
       // STEP 6
       textFame.style.top = "0%";
-
-      builders.style.left = "-70%";
-
       circles.forEach((circle: any, index) =>
         animatePos(circle, 120, 90, circlesData[index].r)
       );
+
+      if (isMobile) {
+        builders.style.left = "-70%";
+      } else {
+        builders.style.left = "0%";
+      }
+
     } else if (scrollPercentage > break7 && scrollPercentage <= break8) {
       // STEP 7
       textFame.style.top = "-100%";
