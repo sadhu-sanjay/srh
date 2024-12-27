@@ -278,11 +278,16 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         }
       } else if (scrolledPercentage > break5 && scrolledPercentage <= break6) {
         // STEP 5
+        svgCircles.style.opacity = "0";
+        arrow.style.transitionDuration = "1s";
+        arrow.style.opacity = "1";
+          
 
         if (isMobile) {
           mainTitle.style.top = "96%";
           arrow.style.top = "-200%";
           para3.style.top = "-200%";
+
         } else if (isLaptopLarge) {
           mainTitle.style.top = "80%";
           arrow.style.top = "-110%";
@@ -296,9 +301,6 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
           svgCircles.style.top = "-140dvh";
         }
 
-        svgCircles.style.opacity = "0";
-        arrow.style.transitionDuration = "1s";
-        arrow.style.opacity = "1";
       } else if (scrolledPercentage > break6 && scrolledPercentage <= break7) {
         // STEP 6
         arrow.style.transitionDuration = "2.3s";
@@ -306,13 +308,15 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
         iExpendable.style.transform = `translateX(0px) scaleY(${iExpendablePercent})`;
         svgCircles.style.opacity = "1";
-        svgCircles.style.top = "0";
 
         if (isMobile) {
+          svgCircles.style.top = "21dvh";
         } else if (isLaptopLarge) {
+          svgCircles.style.top = "0";
           arrow.style.top = "-270%";
           mainTitle.style.top = "200%";
         } else if (isDesktop) {
+          svgCircles.style.top = "0";
           arrow.style.top = "-230%";
           mainTitle.style.top = "200%";
         }

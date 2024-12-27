@@ -1,5 +1,5 @@
 <div
-  class="sticky overflow-visible top-[100dvh] h-[140dvh] w-full opacity-0 transition-all delay-700 duration-1000"
+  class="sticky top-[100dvh] h-[140dvh] w-full overflow-visible opacity-0 transition-all delay-700 duration-1000"
   id="svg-circles"
 >
   <svg
@@ -28,10 +28,10 @@
     F<span class="relative inline-block"
       >A<div
         id="builders"
-        class="absolute -left-full top-[87%] w-auto text-8xl font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
+        class="absolute -left-full top-[87%] w-auto text-6xl sm:text-8xl font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
       >
         BUILDERS
-        <div class="leading-2 w-5/6 text-xl font-normal text-secondary-accent">
+        <div class="pl-2 leading-2 w-1/2 sm:w-5/6 text-xs sm:text-xl font-bold text-secondary-accent">
           SRH spans entertainment and advertising, giving you access to top
           talent and big ideas. <br />
           <br /> We believe that big, bold stunts can be the most efficient way to
@@ -42,11 +42,11 @@
   </h1>
 
   <div
-    class="absolute transition-all duration-[1600ms] left-[200%] top-1/4 flex w-[100dvw] -translate-x-1/2 flex-col  "
+    class="absolute left-[200%] top-1/4 flex w-[100dvw] -translate-x-1/2 flex-col transition-all duration-[1600ms]"
     id="strategy-text"
   >
     <h1
-      class="text-7xl font-black leading-none text-secondary-accent transition-all  delay-1000 duration-1000"
+      class="text-7xl font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
     >
       INTEGRATED
     </h1>
@@ -63,151 +63,165 @@
       media landscape(1).
     </div>
   </div>
-
-  <script>
-    // Array to hold the circle data (cx, cy, radius, and fill)
-
-import {break5, break6, break7, break8, break9, break10, break11, break12, circlesData } from "../constants"
-
-    const svg = document.getElementById("svgEl") as HTMLElement;
-    // Iterate over the circle data and create each circle programmatically
-    circlesData.forEach((data: any) => {
-      // Create a new circle element using the SVG namespace
-      const circle = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "circle"
-      );
-
-      // Set the attributes for the circle
-      circle.setAttribute("cx", data.cx);
-      circle.setAttribute("cy", data.cy);
-      circle.setAttribute("r", data.r);
-      circle.setAttribute("fill", data.fill);
-
-      // Append the circle to the SVG element
-      svg.appendChild(circle);
-      
-    });
-
-    const elementScroll = document.getElementById("main-window");
-    const builders = document.getElementById("builders") as HTMLElement;
-    const textFame = document.getElementById("fame") as HTMLElement;
-    const strategyText = document.getElementById(
-      "strategy-text"
-    ) as HTMLElement;
-    const circles = document.querySelectorAll("#svg-circles circle");
-
-    function animatePos(
-      circle: SVGElement,
-      targetCx: number,
-      targetCy: number,
-      targetR: number,
-      fill?: string | undefined,
-      duration: number = 700
-    ) {
-      const startTime = performance.now();
-      const initialCx = parseFloat(circle.getAttribute("cx") || "0");
-      const initialCy = parseFloat(circle.getAttribute("cy") || "0");
-      const initialR = parseFloat(circle.getAttribute("r") || "0");
-      const deltaCx = targetCx - initialCx;
-      const deltaCy = targetCy - initialCy;
-      const deltaR = targetR - initialR;
-
-      function animate(time: number) {
-        const elapsed = time - startTime;
-
-        const progress = Math.min(elapsed / duration, 1);
-
-        const newCx = initialCx + deltaCx * progress;
-        const newCy = initialCy + deltaCy * progress;
-        const newR = initialR + deltaR * progress;
-
-        circle.setAttribute("cx", newCx.toString());
-        circle.setAttribute("cy", newCy.toString());
-        circle.setAttribute("r", newR.toString());
-
-        if (fill) {
-          circle.setAttribute("fill", fill);
-        }
-
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        }
-      }
-
-      requestAnimationFrame(animate);
-    }
-
-    elementScroll?.addEventListener("scroll", (el: Event) => {
-      const target = el.target as HTMLElement;
-      const scrollableHeight = target.scrollHeight - window.outerHeight;
-      const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
-
-      if (scrollPercentage > break5 && scrollPercentage <= break6) {
-        // STEP 5
-        textFame.style.top = "-100%";
-        builders.style.left = "-100%";
-        circles.forEach((circle: any, index) =>
-          animatePos(
-            circle,
-            circlesData[index].cx,
-            circlesData[index].cy,
-            circlesData[index].r
-          )
-        );
-      } else if (scrollPercentage > break6 && scrollPercentage <= break7) {
-        // STEP 6
-        textFame.style.top = "0%";
-        builders.style.left = "0%";
-
-        circles.forEach((circle: any, index) =>
-          animatePos(circle, 120, 90, circlesData[index].r)
-        );
-
-      } else if (scrollPercentage > break7 && scrollPercentage <= break8) {
-        // STEP 7
-        textFame.style.top = "-100%";
-        builders.style.left = "-100%";
-
-        circles.forEach((circle: any, index: number) =>
-          animatePos(circle, 120, 90, 25, circlesData[index].fill)
-        );
-      } else if (scrollPercentage > break8 && scrollPercentage <= break9) {
-
-        // STEP 8
-        circles.forEach((circle: any, index: number) =>
-          animatePos(
-            circle,
-            circlesData[index].cx1,
-            circlesData[index].cy1,
-            25,
-            circlesData[index].fill1
-          )
-
-        );
-
-      } else if (scrollPercentage > break9 && scrollPercentage <= break10) {
-
-        circles.forEach((circle: any, index: number) =>
-          animatePos(circle, circlesData[index].cx2, circlesData[index].cy2, 6)
-        );
-
-      } else if (scrollPercentage > break9 && scrollPercentage <= break10) {
-
-        circles.forEach((circle: any, index: number) =>
-          animatePos(circle, circlesData[index].cx2, circlesData[index].cy2, 6)
-        );
-
-      } else if (scrollPercentage > break10 && scrollPercentage <= break11) {
-
-        circles.forEach((circle: any, index: number) =>
-          animatePos(circle, circlesData[index].cx2 - 70, circlesData[index].cy2, 6)
-        );
-
-      }
-
-
-    });
-  </script>
 </div>
 
+<script>
+
+  const isMobile = window.matchMedia("(max-width: 639px)").matches;
+  const isTablet = window.matchMedia(
+    "(min-width: 640px) and (max-width: 1023px)"
+  ).matches;
+  const isLaptop = window.matchMedia(
+    "(min-width: 1024px) and (max-width: 1279px)"
+  ).matches;
+  const isLaptopLarge = window.matchMedia(
+    "(min-width: 1280px) and (max-width: 1535px)"
+  ).matches;
+  const isDesktop = window.matchMedia("(min-width: 1536px)").matches;
+
+  import {
+    break5,
+    break6,
+    break7,
+    break8,
+    break9,
+    break10,
+    break11,
+    break12,
+    circlesData,
+  } from "../constants";
+
+  const svg = document.getElementById("svgEl") as HTMLElement;
+  // Iterate over the circle data and create each circle programmatically
+  circlesData.forEach((data: any) => {
+    // Create a new circle element using the SVG namespace
+    const circle = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "circle"
+    );
+
+    // Set the attributes for the circle
+    circle.setAttribute("cx", data.cx);
+    circle.setAttribute("cy", data.cy);
+    circle.setAttribute("r", data.r);
+    circle.setAttribute("fill", data.fill);
+
+    // Append the circle to the SVG element
+    svg.appendChild(circle);
+  });
+
+  const elementScroll = document.getElementById("main-window");
+  const builders = document.getElementById("builders") as HTMLElement;
+  const textFame = document.getElementById("fame") as HTMLElement;
+  const strategyText = document.getElementById("strategy-text") as HTMLElement;
+  const circles = document.querySelectorAll("#svg-circles circle");
+
+  function animatePos(
+    circle: SVGElement,
+    targetCx: number,
+    targetCy: number,
+    targetR: number,
+    fill?: string | undefined,
+    duration: number = 700
+  ) {
+
+
+
+    const startTime = performance.now();
+    const initialCx = parseFloat(circle.getAttribute("cx") || "0");
+    const initialCy = parseFloat(circle.getAttribute("cy") || "0");
+    const initialR = parseFloat(circle.getAttribute("r") || "0");
+    const deltaCx = targetCx - initialCx;
+    const deltaCy = targetCy - initialCy;
+    const deltaR = targetR - initialR;
+
+    function animate(time: number) {
+      const elapsed = time - startTime;
+
+      const progress = Math.min(elapsed / duration, 1);
+
+      const newCx = initialCx + deltaCx * progress;
+      const newCy = initialCy + deltaCy * progress;
+      const newR = initialR + deltaR * progress;
+
+      circle.setAttribute("cx", newCx.toString());
+      circle.setAttribute("cy", newCy.toString());
+      circle.setAttribute("r", newR.toString());
+
+      if (fill) {
+        circle.setAttribute("fill", fill);
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  elementScroll?.addEventListener("scroll", (el: Event) => {
+    const target = el.target as HTMLElement;
+    const scrollableHeight = target.scrollHeight - window.outerHeight;
+    const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
+
+    if (scrollPercentage > break5 && scrollPercentage <= break6) {
+      // STEP 5
+      textFame.style.top = "-100%";
+      builders.style.left = "-200%";
+      circles.forEach((circle: any, index) =>
+        animatePos(
+          circle,
+          circlesData[index].cx,
+          circlesData[index].cy,
+          circlesData[index].r
+        )
+      );
+    } else if (scrollPercentage > break6 && scrollPercentage <= break7) {
+      // STEP 6
+      textFame.style.top = "0%";
+
+      builders.style.left = "-70%";
+
+      circles.forEach((circle: any, index) =>
+        animatePos(circle, 120, 90, circlesData[index].r)
+      );
+    } else if (scrollPercentage > break7 && scrollPercentage <= break8) {
+      // STEP 7
+      textFame.style.top = "-100%";
+      builders.style.left = "-100%";
+
+      circles.forEach((circle: any, index: number) =>
+        animatePos(circle, 120, 90, 25, circlesData[index].fill)
+      );
+    } else if (scrollPercentage > break8 && scrollPercentage <= break9) {
+      // STEP 8
+      circles.forEach((circle: any, index: number) =>
+        animatePos(
+          circle,
+          circlesData[index].cx1,
+          circlesData[index].cy1,
+          25,
+          circlesData[index].fill1
+        )
+      );
+    } else if (scrollPercentage > break9 && scrollPercentage <= break10) {
+      circles.forEach((circle: any, index: number) =>
+        animatePos(circle, circlesData[index].cx2, circlesData[index].cy2, 6)
+      );
+    } else if (scrollPercentage > break9 && scrollPercentage <= break10) {
+      circles.forEach((circle: any, index: number) =>
+        animatePos(circle, circlesData[index].cx2, circlesData[index].cy2, 6)
+      );
+    } else if (scrollPercentage > break10 && scrollPercentage <= break11) {
+      circles.forEach((circle: any, index: number) =>
+        animatePos(
+          circle,
+          circlesData[index].cx2 - 70,
+          circlesData[index].cy2,
+          6
+        )
+      );
+    }
+  });
+</script>
