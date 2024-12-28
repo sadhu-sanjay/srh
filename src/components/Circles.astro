@@ -48,16 +48,16 @@
     id="strategy-text"
   >
     <h1
-      class="text-7xl font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
+      class="text-4xl sm:text-7xl font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
     >
       INTEGRATED
     </h1>
     <div
-      class="text-[12dvw] font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
+      class="text-3xl sm:text-[12dvw] font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
     >
       STRATEGY
     </div>
-    <div class="leading-2 w-5/6 text-xl font-normal text-secondary-accent">
+    <div class="leading-2 w-5/6 text-xs sm:text-xl font-normal text-secondary-accent">
       We do all planning with strategy, creative<br />
       and media in the room together because <br />
       the assembly line approach doesn't work <br />
@@ -187,7 +187,6 @@
       } else {
         builders.style.left = "0%";
       }
-
     } else if (scrollPercentage > break7 && scrollPercentage <= break8) {
       // STEP 7
       textFame.style.top = "-100%";
@@ -208,14 +207,36 @@
         )
       );
     } else if (scrollPercentage > break9 && scrollPercentage <= break10) {
-      circles.forEach((circle: any, index: number) =>
-        animatePos(circle, circlesData[index].cx2, circlesData[index].cy2, 6)
-      );
+      // STEP 9
+      if (isMobile) {
+        circles.forEach((circle: any, index: number) =>
+          animatePos(
+            circle,
+            circlesData[index].cx2 + 18,
+            circlesData[index].cy2 - 60,
+            6
+          )
+        );
+      } else {
+        circles.forEach((circle: any, index: number) =>
+          animatePos(
+            circle,
+            circlesData[index].cx2 ,
+            circlesData[index].cy2,
+            6
+          )
+        );
+      }
     } else if (scrollPercentage > break9 && scrollPercentage <= break10) {
+
+      // STEP 10
       circles.forEach((circle: any, index: number) =>
         animatePos(circle, circlesData[index].cx2, circlesData[index].cy2, 6)
       );
+
     } else if (scrollPercentage > break10 && scrollPercentage <= break11) {
+
+      // STEP 11
       circles.forEach((circle: any, index: number) =>
         animatePos(
           circle,
