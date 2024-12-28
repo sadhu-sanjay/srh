@@ -25,12 +25,17 @@
       strategyText.style.left = "160%";
     } else if (scrollPercentage > break9 && scrollPercentage <= break10) {
 
-      strategyText.style.top = "25%";
 
-      if (isLaptopLarge) {
+      if (isMobile){
+
+        strategyText.style.left = "56%";
+      strategyText.style.top = "0";
+      } else if (isLaptopLarge) {
         strategyText.style.left = "66%";
+      strategyText.style.top = "25%";
       } else if (isDesktop) {
         strategyText.style.left = "71%";
+      strategyText.style.top = "25%";
       }
 
     } else if (scrollPercentage > break10) strategyText.style.top = "106%";
