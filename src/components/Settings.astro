@@ -4,14 +4,12 @@
 >
   <svg
     id="settings-icon1"
-    height="95dvh"
-    width="100dvh"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 512 512"
     xml:space="preserve"
-    class="absolute -top-[20%] animate-spin transition-all duration-[2000ms]"
+    class="absolute h-[50dvh] sm:h-[95dvh] w-[50dvh] sm:w-[95dvh] -top-[20%] animate-spin transition-all duration-[2000ms]"
   >
     <path
       fill="#f52a99"
@@ -139,6 +137,7 @@
   // }
 
   mainWindow?.addEventListener("scroll", (ev: Event) => {
+
     const target = ev.target as Element;
     const scrollableHeight = target.scrollHeight - window.outerHeight;
     const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
