@@ -1,5 +1,5 @@
 <div
-  class=" z-50 sticky -top-full  w-full bg-red-800 transition-all duration-1000"
+  class="sticky -top-full z-50 w-full bg-red-800 transition-all duration-1000"
   id="settings-svg-container"
 >
   <svg
@@ -9,7 +9,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 512 512"
     xml:space="preserve"
-    class="absolute h-[50dvh] sm:h-[95dvh] w-[50dvh] sm:w-[95dvh] -top-[20%] animate-spin transition-all duration-[2000ms]"
+    class="absolute -top-[20%] h-[50dvh] w-[50dvh] animate-spin transition-all duration-[2000ms] sm:h-[95dvh] sm:w-[95dvh]"
   >
     <path
       fill="#f52a99"
@@ -24,7 +24,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 512 512"
     xml:space="preserve"
-    class="absolute h-[55dvh] sm:h-[95dvh] sm:w-[95dvh] w-[55dvh] -right-[20%] -top-[20%] animate-spinBack transition-all duration-[2000ms]"
+    class="absolute -right-[20%] -top-[20%] h-[55dvh] w-[55dvh] animate-spinBack transition-all duration-[2000ms] sm:h-[95dvh] sm:w-[95dvh]"
   >
     <path
       fill="#f52a99"
@@ -39,7 +39,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 512 512"
     xml:space="preserve"
-    class="absolute h-[50dvh] sm:h-[95dvh] sm:w-[100dvh] w-[50dvh] left-0 top-0 animate-spin transition-all duration-[2000ms]"
+    class="absolute left-0 top-0 h-[50dvh] w-[50dvh] animate-spin transition-all duration-[2000ms] sm:h-[95dvh] sm:w-[95dvh]"
   >
     <path
       fill="#f52a99"
@@ -54,7 +54,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 512 512"
     xml:space="preserve"
-    class="absolute h-[50dvh] sm:h-[95dvh] w-[50dvh] sm:w-[100dvh] -right-1/2 sm:right-0 top-0 translate-y-full sm:translate-y-0 animate-spin transition-all duration-[2000ms]"
+    class="absolute -right-1/2 top-0 h-[50dvh] w-[50dvh] translate-y-full animate-spin transition-all duration-[2000ms] sm:right-0 sm:h-[95dvh] sm:w-[95dvh] sm:translate-y-0"
   >
     <path
       fill="#f52a99"
@@ -63,32 +63,30 @@
   </svg>
 
   <div
-    class="absolute sm:top-0 left-1/2 translate-y-1/2 sm:translate-y-0 -translate-x-1/2 flex flex-col items-center transition-all duration-[1600ms]"
+    class="absolute left-1/2 flex -translate-x-1/2 translate-y-1/2 flex-col items-center transition-all duration-[1600ms] sm:top-0 sm:translate-y-0"
     id="emperical-textGroup"
   >
     <h1
-      class=" text-5xl sm:text-[12.5rem] font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000"
+      class="text-5xl font-black leading-none text-secondary-accent transition-all delay-1000 duration-1000 sm:text-[12.5rem]"
     >
       EMPERICAL
     </h1>
-    <div class="relative flex sm:translate-x-1/3 flex-col justify-start">
+    <div class="relative flex flex-col justify-start sm:translate-x-1/3">
       <div
-        class=" text-6xl sm:text-[9rem] font-black leading-none text-secondary-accent transition-all duration-1000"
+        class="text-6xl font-black leading-none text-secondary-accent transition-all duration-1000 sm:text-[9rem]"
       >
         TOOLKIT
       </div>
 
-      <div class="leading-2 w-full sm:w-5/6 text-xl font-normal text-secondary-accent">
-        We have tools that harness brand growth
-        research & principles that most agencies in 
-        America aren't even paying attention to -
-        like The Cogs, a brand health dashboard
-        that measures what matters(1).
+      <div
+        class="leading-2 w-full text-xl font-normal text-secondary-accent sm:w-5/6"
+      >
+        We have tools that harness brand growth research & principles that most
+        agencies in America aren't even paying attention to - like The Cogs, a
+        brand health dashboard that measures what matters(1).
       </div>
     </div>
-
   </div>
-
 </div>
 
 <script>
@@ -137,7 +135,6 @@
   // }
 
   mainWindow?.addEventListener("scroll", (ev: Event) => {
-
     const target = ev.target as Element;
     const scrollableHeight = target.scrollHeight - window.outerHeight;
     const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
@@ -171,8 +168,7 @@
       settingsIcon4!.style.top = "0dvh";
       settingsIcon4!.style.scale = "1";
 
-      empericalTextGroup!.style.top = "0dvh"
-
+      empericalTextGroup!.style.top = "0dvh";
     } else if (scrollPercentage > break12 && scrollPercentage <= break13) {
       settingsIcon2!.style.top = "200dvh";
       settingsIcon2!.style.scale = "1";
@@ -183,16 +179,13 @@
       settingsIcon4!.style.top = "80dvh";
       settingsIcon4!.style.scale = "2.7";
       settingsIcon4!.style.right = "10%";
-      
-      empericalTextGroup!.style.top = "120dvh"
 
+      empericalTextGroup!.style.top = "120dvh";
     } else if (scrollPercentage > break13 && scrollPercentage <= break14) {
-
       settingsIcon4!.style.top = "200dvh";
       settingsIcon4!.style.scale = "1";
 
-      empericalTextGroup!.style.top = "200dvh"
+      empericalTextGroup!.style.top = "200dvh";
     }
-
   });
 </script>
