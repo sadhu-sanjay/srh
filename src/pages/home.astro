@@ -9,7 +9,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
 <style is:global>
   .i-width {
-    width: 1.36rem;
+    width: 1.5rem;
   }
 
   .margin-right-custom {
@@ -39,24 +39,36 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
   @media (min-width: 1536px) and (max-width: 2560px) {
     .i-width {
-      width: 7.6rem;
+      width: 6.8rem;
     }
     .margin-right-custom {
       margin-right: 1.2rem;
     }
   }
+
+  /* Hide scrollbar */
+  #main-window::-webkit-scrollbar {
+    display: none;
+  }
+  #main-window {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
 </style>
 
 <main
   id="main-window"
-  class="relative h-[100dvh] w-[100dvw] overflow-scroll bg-white"
+  class="relative h-[100dvh] w-[100dvw] overflow-scroll scroll-smooth bg-white"
 >
-  <img
-    id="logo"
-    src="SRHLogo_Glitch.gif"
-    alt="SRH Logo website logo"
-    class="fixed left-1/2 top-1/2 z-20 w-1/3 -translate-x-1/2 -translate-y-1/2 transition-all duration-700 sm:w-3/12 sm:landscape:w-1/12"
-  />
+
+  <a href="/">
+    <img
+      id="logo"
+      src="SRHLogo_Glitch.gif"
+      alt="SRH Logo website logo"
+      class="fixed left-1/2 top-1/2 z-20 w-1/3 -translate-x-1/2 -translate-y-1/2 transition-all duration-700 sm:w-3/12 sm:landscape:w-1/12"
+    />
+  </a>
 
   <div
     id="spacer"
@@ -325,7 +337,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         iExpendable.style.transform = `translateX(70px) scaleY(${iExpendablePercent})`;
 
         if (isMobile) {
-          iExpendable.style.width = "1.36rem";
+          iExpendable.style.width = "1.5rem";
           iExpendable.style.transform = `translateX(30px) scaleY(${iExpendablePercent})`;
         } else if (isLaptopLarge) {
           iExpendable.style.transform = `translateX(70px) scaleY(${iExpendablePercent})`;
@@ -337,7 +349,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
       } else if (scrolledPercentage > break8 && scrolledPercentage <= break9) {
         // STEP 8
         if (isMobile) {
-          iExpendable.style.width = "1.36rem";
+          iExpendable.style.width = "1.5rem";
         } else if (isLaptopLarge) {
           iExpendable.style.width = "5.3rem";
         } else if (isDesktop) {
@@ -364,7 +376,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
         iExpendable.style.transform = `translateX(10%) scaleY(${iExpendablePercent})`;
         if (isMobile) {
-          iExpendable.style.width = "1.36rem";
+          iExpendable.style.width = "1.5rem";
         } else if (isLaptopLarge) {
           iExpendable.style.width = "5.3rem";
         } else if (isDesktop) {
