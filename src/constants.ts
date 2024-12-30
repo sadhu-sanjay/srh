@@ -32,7 +32,7 @@ export const circlesData = [
       { cx: 130, cy: 80, cx1: 120, cy1: 70, cx2: 15, cy2: 165, r: 25, fill: "rgba(var(--accent), 0.4)", fill1: "rgba(var(--accent), 0.9)", },
 ];
 
-export const BrandCategories = [ "Business Strategy", "Brand Identity", "Concepting", "Strategy", "Business", "Media", "Agency New" ];
+export const BrandCategories = [ "Business Strategy", "Brand Identity", " New Agency", "Concepting", "Strategy", "Business", "Media"];
 
 export const projects = [
       { id: 1, title: "HUNDREDS OF BEAVERS", category: "Emperical Marketing, Brand Strategy", img: "p1.png" },

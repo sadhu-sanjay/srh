@@ -8,23 +8,28 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 ---
 
 <style is:global>
+
   .i-width {
-    width: 1.5rem;
+    width: 1.25rem;
+    left: 50.5%;
   }
 
   .margin-right-custom {
     margin-right: 0.4rem;
   }
 
-  @media (min-width: 768px and max-width: 1023px) {
+  @media (min-width: 640px) and (max-width: 1023px) {
     .i-width {
-      width: 3.4rem;
+      width: 2.6rem;
     }
   }
 
-  @media (min-width: 1024px and max-width: 1279px) {
+  @media (min-width: 1024px) and (max-width: 1279px) {
     .i-width {
-      width: 3.4rem;
+      width: 4.2rem ;
+    }
+    .margin-right-custom {
+      margin-right: 1rem;
     }
   }
 
@@ -50,6 +55,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
   #main-window::-webkit-scrollbar {
     display: none;
   }
+
   #main-window {
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -75,17 +81,19 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
     class="relative -left-[10%] -top-[100dvh] h-[2200dvh] w-[120%] border-4 bg-primary"
   >
     <Settings />
+
     <div
       id="mainTitle"
       class="sticky top-full w-full justify-between text-center text-accent transition-all duration-700"
     >
+
       <text class="text-center text-7xl text-[33dvw] font-black leading-none">
-        AR<span class="-ml-[0.20rem] xl:-ml-[0.950rem] 2xl:-ml-5">I</span>SE
+        ARISE
       </text>
 
       <div
         id="iExpendable"
-        class="i-width absolute bottom-1/2 left-1/2 h-12 origin-bottom bg-accent transition-all duration-1000 xl:w-[5.2rem]"
+        class="i-width bg-yellow-500  absolute bottom-1/2  h-12 origin-bottom bg-accent transition-all duration-1000"
       >
       </div>
 
@@ -119,7 +127,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
 
       <p
         id="para2"
-        class="absolute left-[52%] top-[200%] h-28 w-32 translate-x-7 text-left text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 xl:translate-x-32 xl:text-2xl xl:font-normal"
+        class="absolute left-[52%]  top-[200%] h-28 w-32 translate-x-6 sm:translate-x-12 md:translate-x-16 text-left text-xs font-bold leading-tight text-secondary-accent transition-all duration-700 sm:text-base xl:w-52 lg:translate-x-20 xl:translate-x-32 xl:text-2xl xl:font-normal"
       >
         We use strategy, creative and media to make brands famous in their
         categories.
@@ -129,6 +137,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
     <Circles />
     <StrategyText />
     <MyWorkText />
+
   </div>
 
   <script>
@@ -183,6 +192,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
       console.log("%%", scrolledPercentage);
 
       if (scrolledPercentage <= break1) {
+
         logo.style.left = "50%";
         logo.style.top = "50%";
         logo.style.transform = "translate(-50%,-50%)";
@@ -195,12 +205,16 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         para2.style.top = "200%";
         para3.style.top = "200%";
         arrow.style.top = "200%";
+
       } else if (
         // STEP 1
         scrolledPercentage > break1 &&
         scrolledPercentage <= break2
       ) {
+
         logo.style.transform = "translate(0,0)";
+        logo.style.left = "4%";
+        logo.style.top = "4%";
 
         if (isMobile) {
           logo.style.left = "4%";
@@ -212,11 +226,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
           mainTitle.style.top = "49%";
         } else if (isLaptopLarge) {
           mainTitle.style.top = "40%";
-          logo.style.left = "4%";
-          logo.style.top = "4%";
         } else if (isDesktop) {
-          logo.style.left = "4%";
-          logo.style.top = "4%";
           mainTitle.style.top = "32%";
         }
 
@@ -265,6 +275,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         scrolledPercentage > break4 &&
         scrolledPercentage <= break5
       ) {
+
         if (isMobile) {
           mainTitle.style.top = "86%";
           para1.style.top = "-83%";
@@ -274,8 +285,10 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         } else if (isTablet) {
           mainTitle.style.top = "80%";
           para2.style.top = "-10%";
+          para2.style.top = "-55%";
         } else if (isLaptop) {
           mainTitle.style.top = "62%";
+          para2.style.top = "-55%";
         } else if (isLaptopLarge) {
           para1.style.top = "-45%";
           para2.style.top = "-55%";
@@ -290,6 +303,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         }
       } else if (scrolledPercentage > break5 && scrolledPercentage <= break6) {
         // STEP 5
+
         svgCircles.style.opacity = "0";
         arrow.style.transitionDuration = "1s";
         arrow.style.opacity = "1";
@@ -313,6 +327,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         }
       } else if (scrolledPercentage > break6 && scrolledPercentage <= break7) {
         // STEP 6
+
         arrow.style.transitionDuration = "2.3s";
         arrow.style.opacity = "0";
 
@@ -333,8 +348,6 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         }
       } else if (scrolledPercentage > break7 && scrolledPercentage <= break8) {
         // STEP 7
-
-        iExpendable.style.transform = `translateX(70px) scaleY(${iExpendablePercent})`;
 
         if (isMobile) {
           iExpendable.style.width = "1.5rem";
