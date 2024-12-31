@@ -163,18 +163,19 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
     const svgCircles = document.getElementById("svg-circles") as HTMLElement;
     const mainWindow = document.getElementById("main-window") as HTMLElement;
 
-    const isMobile = window.matchMedia("(max-width: 639px)").matches;
-    const isTablet = window.matchMedia(
+    let isMobile = window.matchMedia("(max-width: 639px)").matches;
+    let isTablet = window.matchMedia(
       "(min-width: 640px) and (max-width: 1023px)"
     ).matches;
-    const isLaptop = window.matchMedia(
+    let isLaptop = window.matchMedia(
       "(min-width: 1024px) and (max-width: 1279px)"
     ).matches;
-    const isLaptopLarge = window.matchMedia(
+    let isLaptopLarge = window.matchMedia(
       "(min-width: 1280px) and (max-width: 1535px)"
     ).matches;
-    const isDesktop = window.matchMedia("(min-width: 1536px)").matches;
-    const iExpendablePercent = "45";
+    let isDesktop = window.matchMedia("(min-width: 1536px)").matches;
+    let iExpendablePercent = "45";
+
 
     mainWindow.addEventListener("scroll", (e: Event) => {
       console.log("Main Window");
@@ -353,6 +354,7 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
           arrow.style.top = "-200%";
           mainTitle.style.top = "200%";
         }
+
       } else if (scrolledPercentage > break7 && scrolledPercentage <= break8) {
         // STEP 7
 
