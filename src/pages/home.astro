@@ -283,6 +283,8 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
           mainTitle.style.top = "62%";
           para1.style.top = "-45%";
           para2.style.top = "-55%";
+          arrow.style.top = "96%";
+          para3.style.top = "96%";
         } else if (isLaptopLarge) {
           para1.style.top = "-45%";
           para2.style.top = "-55%";
@@ -307,6 +309,12 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
           arrow.style.top = "-200%";
           para3.style.top = "-200%";
           svgCircles.style.top = "100dvh";
+        }else if (isTablet) {
+
+          mainTitle.style.top = "80%";
+          arrow.style.top = "-110%";
+          para3.style.top = "-110%";
+
         } else if (isLaptopLarge) {
           mainTitle.style.top = "80%";
           arrow.style.top = "-110%";
@@ -331,13 +339,18 @@ import ThreeArrow from "../Icons/ThreeArrow.astro";
         if (isMobile) {
           svgCircles.style.top = "21dvh";
           mainTitle.style.top = "200%";
+        } else if (isTablet) {
+
+          svgCircles.style.top = "0";
+          arrow.style.top = "-270%";
+          mainTitle.style.top = "200%";
         } else if (isLaptopLarge) {
           svgCircles.style.top = "0";
           arrow.style.top = "-270%";
           mainTitle.style.top = "200%";
         } else if (isDesktop) {
           svgCircles.style.top = "0";
-          arrow.style.top = "-230%";
+          arrow.style.top = "-200%";
           mainTitle.style.top = "200%";
         }
       } else if (scrolledPercentage > break7 && scrolledPercentage <= break8) {
