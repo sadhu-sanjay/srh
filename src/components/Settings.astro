@@ -1,5 +1,5 @@
 <div
-  class="sticky -top-full z-50 w-full bg-red-800 transition-all duration-1000"
+  class=" sticky -top-full z-50 w-full bg-red-800 transition-all duration-1000"
   id="settings-svg-container"
 >
   <svg
@@ -9,7 +9,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 512 512"
     xml:space="preserve"
-    class="absolute -top-[20%] h-[50dvh] w-[50dvh] animate-spin transition-all duration-[2000ms] sm:h-[95dvh] sm:w-[95dvh]"
+    class="absolute -top-[20%] h-[100dvw] w-[100dvw] animate-spin transition-all duration-[2000ms] sm:h-[95dvh] sm:w-[95dvh]"
   >
     <path
       fill="#f52a99"
@@ -24,7 +24,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 512 512"
     xml:space="preserve"
-    class="absolute -right-[20%] -top-[20%] h-[55dvh] w-[55dvh] animate-spinBack transition-all duration-[2000ms] sm:h-[95dvh] sm:w-[95dvh]"
+    class="absolute -right-[20%] -top-[20%] h-[100dvw] w-[100dvw] animate-spinBack transition-all duration-[2000ms] sm:h-[95dvh] sm:w-[95dvh]"
   >
     <path
       fill="#f52a99"
@@ -39,7 +39,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 512 512"
     xml:space="preserve"
-    class="absolute left-0 top-0 h-[50dvh] w-[50dvh] animate-spin transition-all duration-[2000ms] sm:h-[95dvh] sm:w-[95dvh]"
+    class="absolute left-0 top-0 h-[100dvw] w-[100dvw] animate-spin transition-all duration-[2000ms] sm:h-[95dvh] sm:w-[95dvh]"
   >
     <path
       fill="#f52a99"
@@ -54,7 +54,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 512 512"
     xml:space="preserve"
-    class="absolute -right-1/2 top-0 h-[50dvh] w-[50dvh] sm:w-[95dvh] sm:h-[95dvh] translate-y-full animate-spin transition-all duration-[2000ms] sm:right-0 sm:translate-y-0"
+    class="absolute -right-1/2 top-0 h-[100dvw] w-[100dvw] sm:w-[95dvh] sm:h-[95dvh] translate-y-full animate-spin transition-all duration-[2000ms] sm:right-0 sm:translate-y-0"
   >
     <path
       fill="#f52a99"
@@ -93,7 +93,8 @@
 </div>
 
 <script>
-  import {
+  import { isMobile } from "../commonscripts/windowsizer";
+import {
     break1,
     break2,
     break3,
@@ -142,6 +143,7 @@
     const scrollableHeight = target.scrollHeight - window.outerHeight;
     const scrollPercentage = (target.scrollTop / scrollableHeight) * 100;
 
+
     if (scrollPercentage > break9 && scrollPercentage < break10) {
       settingsIcon1!.style.top = "0";
       settingsIcon1!.style.scale = "0.6";
@@ -179,8 +181,12 @@
       settingsIcon3!.style.top = "200dvh";
       settingsIcon3!.style.scale = "1";
 
+      if (isMobile) {
+        settingsIcon4!.style.scale = "1.2";
+      } else {
+        settingsIcon4!.style.scale = "2.7";
+      }
       settingsIcon4!.style.top = "80dvh";
-      settingsIcon4!.style.scale = "2.7";
       settingsIcon4!.style.right = "10%";
 
       empericalTextGroup!.style.top = "120dvh";
