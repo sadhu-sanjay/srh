@@ -4,8 +4,8 @@ const { title, href, class: classname } = Astro.props;
 
 <a href={href}>
   <button
-    class=` pointer-events-auto rounded-full border-accent px-8 border-4 
-    py-4 text-3xl font-medium text-accent hover:text-white ${classname}`
+    class=` pointer-events-auto rounded-full border-accent px-4 sm:px-8 border-4 
+    py-2 sm:py-4 text-xl sm:text-3xl font-medium text-accent hover:text-white ${classname}`
   >
     {title}
   </button>
